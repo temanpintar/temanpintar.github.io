@@ -1,0 +1,1339 @@
+<!DOCTYPE html>
+<html lang="id" prefix="og: https://ogp.me/ns#">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="profile" href="https://gmpg.org/xfn/11">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Penjelasan Algoritma Penjadwalanfcfs Beserta Contoh Soal - BELAJAR</title>
+    <meta name="description" content="Penjelasan Algoritma Penjadwalanfcfs Beserta Contoh Soal, , , , , , , 0, , , , , , 0, penjelasan-algoritma-penjadwalanfcfs-beserta-contoh-soal, BELAJAR" />
+    <meta name="robots" content="index,follow" />
+    <meta property="og:locale" content="id_ID" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Penjelasan Algoritma Penjadwalanfcfs Beserta Contoh Soal - BELAJAR" />
+    <meta property="og:description" content="Penjelasan Algoritma Penjadwalanfcfs Beserta Contoh Soal, , , , , , , 0, , , , , , 0, penjelasan-algoritma-penjadwalanfcfs-beserta-contoh-soal, BELAJAR" />
+    <meta property="og:site_name" content="BELAJAR" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Penjelasan Algoritma Penjadwalanfcfs Beserta Contoh Soal - BELAJAR" />
+    <meta name="twitter:description" content="Penjelasan Algoritma Penjadwalanfcfs Beserta Contoh Soal, , , , , , , 0, , , , , , 0, penjelasan-algoritma-penjadwalanfcfs-beserta-contoh-soal, BELAJAR" />
+    <link rel='stylesheet' id='generate-style-css' href='https://temanpintar.github.io/css/main.min.css'?ver=3.2.4'
+        media='all' />
+    <link rel='stylesheet' id='ez-toc-css' href='https://temanpintar.github.io/css/screen.min.css'?ver=2.0.40' media='all' />
+    <style id='generate-style-inline-css'>
+        body {
+            background-color: #f7f7f7;
+            color: #222222;
+        }
+
+        a {
+            color: #1e73be;
+        }
+
+        a:hover,
+        a:focus,
+        a:active {
+            color: #000000;
+        }
+
+        .wp-block-group__inner-container {
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .generate-back-to-top {
+            font-size: 20px;
+            border-radius: 3px;
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            line-height: 40px;
+            width: 40px;
+            text-align: center;
+            z-index: 10;
+            transition: opacity 300ms ease-in-out;
+            opacity: 0.1;
+            transform: translateY(1000px);
+        }
+
+        .generate-back-to-top__show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .navigation-search {
+            position: absolute;
+            left: -99999px;
+            pointer-events: none;
+            visibility: hidden;
+            z-index: 20;
+            width: 100%;
+            top: 0;
+            transition: opacity 100ms ease-in-out;
+            opacity: 0;
+        }
+
+        .navigation-search.nav-search-active {
+            left: 0;
+            right: 0;
+            pointer-events: auto;
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .navigation-search input[type="search"] {
+            outline: 0;
+            border: 0;
+            vertical-align: bottom;
+            line-height: 1;
+            opacity: 0.9;
+            width: 100%;
+            z-index: 20;
+            border-radius: 0;
+            -webkit-appearance: none;
+            height: 60px;
+        }
+
+        .navigation-search input::-ms-clear {
+            display: none;
+            width: 0;
+            height: 0;
+        }
+
+        .navigation-search input::-ms-reveal {
+            display: none;
+            width: 0;
+            height: 0;
+        }
+
+        .navigation-search input::-webkit-search-decoration,
+        .navigation-search input::-webkit-search-cancel-button,
+        .navigation-search input::-webkit-search-results-button,
+        .navigation-search input::-webkit-search-results-decoration {
+            display: none;
+        }
+
+        .gen-sidebar-nav .navigation-search {
+            top: auto;
+            bottom: 0;
+        }
+
+        :root {
+            --contrast: #222222;
+            --contrast-2: #575760;
+            --contrast-3: #b2b2be;
+            --base: #f0f0f0;
+            --base-2: #f7f8f9;
+            --base-3: #ffffff;
+            --accent: #1e73be;
+        }
+
+        .has-contrast-color {
+            color: var(--contrast);
+        }
+
+        .has-contrast-background-color {
+            background-color: var(--contrast);
+        }
+
+        .has-contrast-2-color {
+            color: var(--contrast-2);
+        }
+
+        .has-contrast-2-background-color {
+            background-color: var(--contrast-2);
+        }
+
+        .has-contrast-3-color {
+            color: var(--contrast-3);
+        }
+
+        .has-contrast-3-background-color {
+            background-color: var(--contrast-3);
+        }
+
+        .has-base-color {
+            color: var(--base);
+        }
+
+        .has-base-background-color {
+            background-color: var(--base);
+        }
+
+        .has-base-2-color {
+            color: var(--base-2);
+        }
+
+        .has-base-2-background-color {
+            background-color: var(--base-2);
+        }
+
+        .has-base-3-color {
+            color: var(--base-3);
+        }
+
+        .has-base-3-background-color {
+            background-color: var(--base-3);
+        }
+
+        .has-accent-color {
+            color: var(--accent);
+        }
+
+        .has-accent-background-color {
+            background-color: var(--accent);
+        }
+
+        body,
+        button,
+        input,
+        select,
+        textarea {
+            font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        }
+
+        body {
+            line-height: 1.5;
+        }
+
+        .entry-content>[class*="wp-block-"]:not(:last-child) {
+            margin-bottom: 1.5em;
+        }
+
+        .main-navigation .main-nav ul ul li a {
+            font-size: 14px;
+        }
+
+        .sidebar .widget,
+        .footer-widgets .widget {
+            font-size: 17px;
+        }
+
+        @media (max-width:768px) {
+            h1 {
+                font-size: 31px;
+            }
+
+            h2 {
+                font-size: 27px;
+            }
+
+            h3 {
+                font-size: 24px;
+            }
+
+            h4 {
+                font-size: 22px;
+            }
+
+            h5 {
+                font-size: 19px;
+            }
+        }
+
+        .top-bar {
+            background-color: #636363;
+            color: #ffffff;
+        }
+
+        .top-bar a {
+            color: #ffffff;
+        }
+
+        .top-bar a:hover {
+            color: #303030;
+        }
+
+        .site-header {
+            background-color: #ffffff;
+        }
+
+        .main-title a,
+        .main-title a:hover {
+            color: #222222;
+        }
+
+        .site-description {
+            color: #757575;
+        }
+
+        .main-navigation,
+        .main-navigation ul ul {
+            background-color: #ed4250;
+        }
+
+        .main-navigation .main-nav ul li a,
+        .main-navigation .menu-toggle,
+        .main-navigation .menu-bar-items {
+            color: #ffffff;
+        }
+
+        .main-navigation .main-nav ul li:not([class*="current-menu-"]):hover>a,
+        .main-navigation .main-nav ul li:not([class*="current-menu-"]):focus>a,
+        .main-navigation .main-nav ul li.sfHover:not([class*="current-menu-"])>a,
+        .main-navigation .menu-bar-item:hover>a,
+        .main-navigation .menu-bar-item.sfHover>a {
+            color: #ffffff;
+            background-color: #c42f2f;
+        }
+
+        button.menu-toggle:hover,
+        button.menu-toggle:focus {
+            color: #ffffff;
+        }
+
+        .main-navigation .main-nav ul li[class*="current-menu-"]>a {
+            color: #ffffff;
+            background-color: #c42f2f;
+        }
+
+        .navigation-search input[type="search"],
+        .navigation-search input[type="search"]:active,
+        .navigation-search input[type="search"]:focus,
+        .main-navigation .main-nav ul li.search-item.active>a,
+        .main-navigation .menu-bar-items .search-item.active>a {
+            color: #ffffff;
+            background-color: #c42f2f;
+        }
+
+        .main-navigation ul ul {
+            background-color: #c42f2f;
+        }
+
+        .main-navigation .main-nav ul ul li a {
+            color: #ffffff;
+        }
+
+        .main-navigation .main-nav ul ul li:not([class*="current-menu-"]):hover>a,
+        .main-navigation .main-nav ul ul li:not([class*="current-menu-"]):focus>a,
+        .main-navigation .main-nav ul ul li.sfHover:not([class*="current-menu-"])>a {
+            color: #fcd9d6;
+            background-color: #c42f2f;
+        }
+
+        .main-navigation .main-nav ul ul li[class*="current-menu-"]>a {
+            color: #fcd9d6;
+            background-color: #c42f2f;
+        }
+
+        .separate-containers .inside-article,
+        .separate-containers .comments-area,
+        .separate-containers .page-header,
+        .one-container .container,
+        .separate-containers .paging-navigation,
+        .inside-page-header {
+            background-color: #ffffff;
+        }
+
+        .entry-title a {
+            color: #222222;
+        }
+
+        .entry-title a:hover {
+            color: #55555e;
+        }
+
+        .entry-meta {
+            color: #595959;
+        }
+
+        .sidebar .widget {
+            background-color: #ffffff;
+        }
+
+        .footer-widgets {
+            background-color: #ffffff;
+        }
+
+        .footer-widgets .widget-title {
+            color: #000000;
+        }
+
+        .site-info {
+            color: #ffffff;
+            background-color: #55555e;
+        }
+
+        .site-info a {
+            color: #ffffff;
+        }
+
+        .site-info a:hover {
+            color: #d3d3d3;
+        }
+
+        .footer-bar .widget_nav_menu .current-menu-item a {
+            color: #d3d3d3;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="url"],
+        input[type="password"],
+        input[type="search"],
+        input[type="tel"],
+        input[type="number"],
+        textarea,
+        select {
+            color: #666666;
+            background-color: #fafafa;
+            border-color: #cccccc;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="url"]:focus,
+        input[type="password"]:focus,
+        input[type="search"]:focus,
+        input[type="tel"]:focus,
+        input[type="number"]:focus,
+        textarea:focus,
+        select:focus {
+            color: #666666;
+            background-color: #ffffff;
+            border-color: #bfbfbf;
+        }
+
+        button,
+        html input[type="button"],
+        input[type="reset"],
+        input[type="submit"],
+        a.button,
+        a.wp-block-button__link:not(.has-background) {
+            color: #ffffff;
+            background-color: #55555e;
+        }
+
+        button:hover,
+        html input[type="button"]:hover,
+        input[type="reset"]:hover,
+        input[type="submit"]:hover,
+        a.button:hover,
+        button:focus,
+        html input[type="button"]:focus,
+        input[type="reset"]:focus,
+        input[type="submit"]:focus,
+        a.button:focus,
+        a.wp-block-button__link:not(.has-background):active,
+        a.wp-block-button__link:not(.has-background):focus,
+        a.wp-block-button__link:not(.has-background):hover {
+            color: #ffffff;
+            background-color: #3f4047;
+        }
+
+        a.generate-back-to-top {
+            background-color: rgba(0, 0, 0, 0.4);
+            color: #ffffff;
+        }
+
+        a.generate-back-to-top:hover,
+        a.generate-back-to-top:focus {
+            background-color: rgba(0, 0, 0, 0.6);
+            color: #ffffff;
+        }
+
+        @media (max-width:768px) {
+
+            .main-navigation .menu-bar-item:hover>a,
+            .main-navigation .menu-bar-item.sfHover>a {
+                background: none;
+                color: #ffffff;
+            }
+        }
+
+        .nav-below-header .main-navigation .inside-navigation.grid-container,
+        .nav-above-header .main-navigation .inside-navigation.grid-container {
+            padding: 0px 20px 0px 20px;
+        }
+
+        .site-main .wp-block-group__inner-container {
+            padding: 40px;
+        }
+
+        .separate-containers .paging-navigation {
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        .entry-content .alignwide,
+        body:not(.no-sidebar) .entry-content .alignfull {
+            margin-left: -40px;
+            width: calc(100% + 80px);
+            max-width: calc(100% + 80px);
+        }
+
+        .rtl .menu-item-has-children .dropdown-menu-toggle {
+            padding-left: 20px;
+        }
+
+        .rtl .main-navigation .main-nav ul li.menu-item-has-children>a {
+            padding-right: 20px;
+        }
+
+        @media (max-width:768px) {
+
+            .separate-containers .inside-article,
+            .separate-containers .comments-area,
+            .separate-containers .page-header,
+            .separate-containers .paging-navigation,
+            .one-container .site-content,
+            .inside-page-header {
+                padding: 30px;
+            }
+
+            .site-main .wp-block-group__inner-container {
+                padding: 30px;
+            }
+
+            .inside-top-bar {
+                padding-right: 30px;
+                padding-left: 30px;
+            }
+
+            .inside-header {
+                padding-right: 30px;
+                padding-left: 30px;
+            }
+
+            .widget-area .widget {
+                padding-top: 30px;
+                padding-right: 30px;
+                padding-bottom: 30px;
+                padding-left: 30px;
+            }
+
+            .footer-widgets-container {
+                padding-top: 30px;
+                padding-right: 30px;
+                padding-bottom: 30px;
+                padding-left: 30px;
+            }
+
+            .inside-site-info {
+                padding-right: 30px;
+                padding-left: 30px;
+            }
+
+            .entry-content .alignwide,
+            body:not(.no-sidebar) .entry-content .alignfull {
+                margin-left: -30px;
+                width: calc(100% + 60px);
+                max-width: calc(100% + 60px);
+            }
+
+            .one-container .site-main .paging-navigation {
+                margin-bottom: 20px;
+            }
+        }
+
+        /* End cached CSS */
+        .is-right-sidebar {
+            width: 30%;
+        }
+
+        .is-left-sidebar {
+            width: 30%;
+        }
+
+        .site-content .content-area {
+            width: 70%;
+        }
+
+        @media (max-width:768px) {
+
+            .main-navigation .menu-toggle,
+            .sidebar-nav-mobile:not(#sticky-placeholder) {
+                display: block;
+            }
+
+            .main-navigation ul,
+            .gen-sidebar-nav,
+            .main-navigation:not(.slideout-navigation):not(.toggled) .main-nav>ul,
+            .has-inline-mobile-toggle #site-navigation .inside-navigation>*:not(.navigation-search):not(.main-nav) {
+                display: none;
+            }
+
+            .nav-align-right .inside-navigation,
+            .nav-align-center .inside-navigation {
+                justify-content: space-between;
+            }
+        }
+    </style>
+    <link rel="icon" href="https://temanpintar.github.io/img/cropped-soalbelajar-32x32.png" sizes="32x32" />
+    <link rel="icon" href="https://temanpintar.github.io/img/cropped-soalbelajar-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="https://temanpintar.github.io/img/cropped-soalbelajar-180x180.png" />
+    <meta name="msapplication-TileImage" content="https://temanpintar.github.io/img/cropped-soalbelajar-270x270.png" />
+</head>
+
+<body
+    class="home blog wp-custom-logo wp-embed-responsive right-sidebar nav-above-header separate-containers nav-search-enabled nav-aligned-center header-aligned-center dropdown-hover"
+    itemtype="https://schema.org/Blog" itemscope>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false"
+        role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+        <defs>
+            <filter id="wp-duotone-dark-grayscale">
+                <feColorMatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <feComponentTransfer color-interpolation-filters="sRGB">
+                    <feFuncR type="table" tableValues="0 0.49803921568627" />
+                    <feFuncG type="table" tableValues="0 0.49803921568627" />
+                    <feFuncB type="table" tableValues="0 0.49803921568627" />
+                    <feFuncA type="table" tableValues="1 1" />
+                </feComponentTransfer>
+                <feComposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false"
+        role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+        <defs>
+            <filter id="wp-duotone-grayscale">
+                <feColorMatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <feComponentTransfer color-interpolation-filters="sRGB">
+                    <feFuncR type="table" tableValues="0 1" />
+                    <feFuncG type="table" tableValues="0 1" />
+                    <feFuncB type="table" tableValues="0 1" />
+                    <feFuncA type="table" tableValues="1 1" />
+                </feComponentTransfer>
+                <feComposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false"
+        role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+        <defs>
+            <filter id="wp-duotone-purple-yellow">
+                <feColorMatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <feComponentTransfer color-interpolation-filters="sRGB">
+                    <feFuncR type="table" tableValues="0.54901960784314 0.98823529411765" />
+                    <feFuncG type="table" tableValues="0 1" />
+                    <feFuncB type="table" tableValues="0.71764705882353 0.25490196078431" />
+                    <feFuncA type="table" tableValues="1 1" />
+                </feComponentTransfer>
+                <feComposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false"
+        role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+        <defs>
+            <filter id="wp-duotone-blue-red">
+                <feColorMatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <feComponentTransfer color-interpolation-filters="sRGB">
+                    <feFuncR type="table" tableValues="0 1" />
+                    <feFuncG type="table" tableValues="0 0.27843137254902" />
+                    <feFuncB type="table" tableValues="0.5921568627451 0.27843137254902" />
+                    <feFuncA type="table" tableValues="1 1" />
+                </feComponentTransfer>
+                <feComposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false"
+        role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+        <defs>
+            <filter id="wp-duotone-midnight">
+                <feColorMatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <feComponentTransfer color-interpolation-filters="sRGB">
+                    <feFuncR type="table" tableValues="0 0" />
+                    <feFuncG type="table" tableValues="0 0.64705882352941" />
+                    <feFuncB type="table" tableValues="0 1" />
+                    <feFuncA type="table" tableValues="1 1" />
+                </feComponentTransfer>
+                <feComposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false"
+        role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+        <defs>
+            <filter id="wp-duotone-magenta-yellow">
+                <feColorMatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <feComponentTransfer color-interpolation-filters="sRGB">
+                    <feFuncR type="table" tableValues="0.78039215686275 1" />
+                    <feFuncG type="table" tableValues="0 0.94901960784314" />
+                    <feFuncB type="table" tableValues="0.35294117647059 0.47058823529412" />
+                    <feFuncA type="table" tableValues="1 1" />
+                </feComponentTransfer>
+                <feComposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false"
+        role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+        <defs>
+            <filter id="wp-duotone-purple-green">
+                <feColorMatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <feComponentTransfer color-interpolation-filters="sRGB">
+                    <feFuncR type="table" tableValues="0.65098039215686 0.40392156862745" />
+                    <feFuncG type="table" tableValues="0 1" />
+                    <feFuncB type="table" tableValues="0.44705882352941 0.4" />
+                    <feFuncA type="table" tableValues="1 1" />
+                </feComponentTransfer>
+                <feComposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false"
+        role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;">
+        <defs>
+            <filter id="wp-duotone-blue-orange">
+                <feColorMatrix color-interpolation-filters="sRGB" type="matrix"
+                    values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 " />
+                <feComponentTransfer color-interpolation-filters="sRGB">
+                    <feFuncR type="table" tableValues="0.098039215686275 1" />
+                    <feFuncG type="table" tableValues="0 0.66274509803922" />
+                    <feFuncB type="table" tableValues="0.84705882352941 0.41960784313725" />
+                    <feFuncA type="table" tableValues="1 1" />
+                </feComponentTransfer>
+                <feComposite in2="SourceGraphic" operator="in" />
+            </filter>
+        </defs>
+    </svg><a class="screen-reader-text skip-link" href="#content" title="Langsung ke isi">Langsung ke isi</a>
+    <nav class="main-navigation nav-align-center has-menu-bar-items sub-menu-right" id="site-navigation"
+        aria-label="Utama" itemtype="https://schema.org/SiteNavigationElement" itemscope>
+        <div class="inside-navigation grid-container">
+            <form method="get" class="search-form navigation-search" action="/">
+                <input type="search" class="search-field" value="" name="q" title="Cari" />
+            </form> <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+                <span class="gp-icon icon-menu-bars"><svg viewBox="0 0 512 512" aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg" width="1em" height="1em">
+                        <path
+                            d="M0 96c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24zm0 160c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24zm0 160c0-13.255 10.745-24 24-24h464c13.255 0 24 10.745 24 24s-10.745 24-24 24H24c-13.255 0-24-10.745-24-24z" />
+                    </svg><svg viewBox="0 0 512 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                        width="1em" height="1em">
+                        <path
+                            d="M71.029 71.029c9.373-9.372 24.569-9.372 33.942 0L256 222.059l151.029-151.03c9.373-9.372 24.569-9.372 33.942 0 9.372 9.373 9.372 24.569 0 33.942L289.941 256l151.03 151.029c9.372 9.373 9.372 24.569 0 33.942-9.373 9.372-24.569 9.372-33.942 0L256 289.941l-151.029 151.03c-9.373 9.372-24.569 9.372-33.942 0-9.372-9.373-9.372-24.569 0-33.942L222.059 256 71.029 104.971c-9.372-9.373-9.372-24.569 0-33.942z" />
+                    </svg></span><span class="mobile-menu">Menu</span> </button>
+            <div id="primary-menu" class="main-nav">
+                <ul id="menu-soal-belajar" class=" menu sf-menu">
+                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1"><a
+                            href="https://temanpintar.github.io">Home</a></li>
+                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2"><a
+                            href="https://temanpintar.github.io/page/dmca.html">DMCA</a></li>
+                    <li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-3"><a
+                            href="https://temanpintar.github.io/page/privacy-policy.html">Privacy Policy</a></li>
+                </ul>
+                </ul>
+            </div>
+            <div class="menu-bar-items"><span class="menu-bar-item search-item"><a aria-label="Buka Kolom Pencarian"
+                        href="#"><span class="gp-icon icon-search"><svg viewBox="0 0 512 512"
+                                aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M208 48c-88.366 0-160 71.634-160 160s71.634 160 160 160 160-71.634 160-160S296.366 48 208 48zM0 208C0 93.125 93.125 0 208 0s208 93.125 208 208c0 48.741-16.765 93.566-44.843 129.024l133.826 134.018c9.366 9.379 9.355 24.575-.025 33.941-9.379 9.366-24.575 9.355-33.941-.025L337.238 370.987C301.747 399.167 256.839 416 208 416 93.125 416 0 322.875 0 208z" />
+                            </svg><svg viewBox="0 0 512 512" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                width="1em" height="1em">
+                                <path
+                                    d="M71.029 71.029c9.373-9.372 24.569-9.372 33.942 0L256 222.059l151.029-151.03c9.373-9.372 24.569-9.372 33.942 0 9.372 9.373 9.372 24.569 0 33.942L289.941 256l151.03 151.029c9.372 9.373 9.372 24.569 0 33.942-9.373 9.372-24.569 9.372-33.942 0L256 289.941l-151.029 151.03c-9.373 9.372-24.569 9.372-33.942 0-9.372-9.373-9.372-24.569 0-33.942L222.059 256 71.029 104.971c-9.372-9.373-9.372-24.569 0-33.942z" />
+                            </svg></span></a></span></div>
+        </div>
+    </nav>
+    <header class="site-header grid-container" id="masthead" aria-label="Situs"
+        itemtype="https://schema.org/WPHeader" itemscope>
+        <div class="inside-header grid-container">
+            <h1 class="site-logo">
+                <a href="https://temanpintar.github.io" rel="home"> BELAJAR</a>
+            </h1>
+        </div>
+    </header>
+
+    <div class="site grid-container container hfeed" id="page">
+        <div class="site-content" id="content">
+            <div class="content-area" id="primary">
+                    <main class="site-main" id="main">
+        <article id="post-1327" class="post-1327 post type-post status-publish format-standard hentry category-info"
+            itemtype="https://schema.org/CreativeWork" itemscope="">
+            <div class="inside-article">
+                <header class="entry-header" aria-label="Konten">
+                    <h1 class="entry-title" itemprop="headline">Penjelasan Algoritma Penjadwalanfcfs Beserta Contoh Soal</h1>
+                    <div class="entry-meta">
+                       <span
+                            class="byline">oleh <span class="author vcard" itemprop="author"
+                                itemtype="https://schema.org/Person" itemscope=""><span class="author-name"
+                                    itemprop="name">ICHSINNASZ19</span></span></span>
+                    </div>
+                </header>
+                <div class="entry-content" itemprop="text">
+                    <div style="text-align: center">
+                        <img src="https://tse1.mm.bing.net/th?q=Penjelasan+Algoritma+Penjadwalanfcfs+Beserta+Contoh+Soal" alt="Penjelasan Algoritma Penjadwalanfcfs Beserta Contoh Soal">
+                    </div>
+                    <p></p>
+                    <p>Jelaskan pengertian algoritma beserta contohnya!</p>
+                    <div id="ez-toc-container"
+                        class="ez-toc-v2_0_40 counter-hierarchy ez-toc-counter ez-toc-light-blue ez-toc-container-direction">
+                        <div class="ez-toc-title-container">
+                            <p class="ez-toc-title">Daftar Isi</p>
+                            <span class="ez-toc-title-toggle"><a href="#"
+                                    class="ez-toc-pull-right ez-toc-btn ez-toc-btn-xs ez-toc-btn-default ez-toc-toggle"
+                                    area-label="ez-toc-toggle-icon-1"><label for="item-63b392361c4a0"
+                                        aria-label="Table of Content"><span
+                                            style="display: flex;align-items: center;width: 35px;height: 30px;justify-content: center;direction:ltr;"><svg
+                                                style="fill: #999;color:#999" xmlns="http://www.w3.org/2000/svg"
+                                                class="list-377408" width="20px" height="20px" viewBox="0 0 24 24"
+                                                fill="none">
+                                                <path
+                                                    d="M6 6H4v2h2V6zm14 0H8v2h12V6zM4 11h2v2H4v-2zm16 0H8v2h12v-2zM4 16h2v2H4v-2zm16 0H8v2h12v-2z"
+                                                    fill="currentColor"></path>
+                                            </svg><svg style="fill: #999;color:#999" class="arrow-unsorted-368013"
+                                                xmlns="http://www.w3.org/2000/svg" width="10px" height="10px"
+                                                viewBox="0 0 24 24" version="1.2" baseProfile="tiny">
+                                                <path
+                                                    d="M18.2 9.3l-6.2-6.3-6.2 6.3c-.2.2-.3.4-.3.7s.1.5.3.7c.2.2.4.3.7.3h11c.3 0 .5-.1.7-.3.2-.2.3-.5.3-.7s-.1-.5-.3-.7zM5.8 14.7l6.2 6.3 6.2-6.3c.2-.2.3-.5.3-.7s-.1-.5-.3-.7c-.2-.2-.4-.3-.7-.3h-11c-.3 0-.5.1-.7.3-.2.2-.3.5-.3.7s.1.5.3.7z">
+                                                </path>
+                                            </svg></span></label><input type="checkbox" id="item-63b392361c4a0"></a></span>
+                        </div>
+                        <nav>
+                            <ul class="ez-toc-list ez-toc-list-level-1 ">
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#jelaskan-pengertian-algoritma-beserta-contohnya">1.
+                                            Jelaskan pengertian algoritma beserta contohnya!</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#apa-itu-algoritma-jelaskan-pengertian-beserta-contohnya%e2%80%8b">2.
+                                            apa itu algoritma? jelaskan pengertian beserta contohnya​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#sebutkan3-struktur-algoritma-dan-jelaskan-beserta-contohnya">3.
+                                            sebutkan3 struktur algoritma dan jelaskan beserta contohnya</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#contoh-soal-algoritma-siskomdig">4.
+                                            contoh soal algoritma siskomdig </a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#contoh-soal-algoritma-looping">5.
+                                            contoh soal algoritma looping</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#1-jelaskan-dan-buat-contoh-soal-tentang-algoritma-paralel-mesh-transpose-untuk-menentukan-transpose-matriks-ukuran-3x3-2-jelaskan-dan-buat-contoh-soal-tentang-algoritma-paralel-shuffle-transpose-u">6.
+                                            1. Jelaskan dan buat contoh soal tentang algoritma paralel Mesh Transpose untuk menentukan transpose matriks ukuran 3x3 
+ 2. Jelaskan dan buat contoh soal tentang algoritma paralel Shuffle Transpose untuk
+ menentukan transpose matriks ukuran 4x4 .</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#1-buatlah-3-soal-cerita-algoritma-beserta-penjelasannya-2-buatlah-3-soal-cerita-baris-aritmatika-beserta-penjelasannya-%e2%80%8b">7.
+                                            1. buatlah 3 soal cerita algoritma beserta penjelasannya 2. buatlah 3 soal cerita baris aritmatika beserta penjelasannya ​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#contoh-soal-essay-uts-dan-jawaban-algoritma-dan-pemrograman">8.
+                                            Contoh Soal essay uts dan jawaban algoritma dan pemrograman</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#pliss-bantuin-hari-ini-tugas-terakhirtolong-buat-algoritma-menghitung-harga-diskonbeserta-contoh-soalnya">9.
+                                            Pliss bantuin hari ini tugas terakhir
+Tolong buat algoritma menghitung harga diskon
+Beserta contoh soalnya</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#penjelasan-algoritma-percabangan-1-kondisi-dan-contohnya">10.
+                                            Penjelasan algoritma percabangan 1 kondisi dan contohnya</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#jelaskan-algoritma-dan-contohnya">11.
+                                            jelaskan algoritma dan contohnya</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#contoh-program-menggunakan-perintah-switch-case-beserta-contoh-algoritmanya">12.
+                                            contoh program menggunakan perintah switch case beserta contoh algoritmanya</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#jelaskan-jenis-jenis-serangan-algoritma-kriptografi-beserta-kompleksitasnya">13.
+                                            Jelaskan jenis jenis serangan algoritma kriptografi beserta kompleksitasnya</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#buatlah-contoh-algoritma-percabangan-berupa-gambar-flowchart-beserta-penjelasannya%e2%80%8b">14.
+                                            buatlah contoh algoritma percabangan  berupa gambar flowchart beserta penjelasannya​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#saya-mnta-tolong-beri-contoh-soal-algoritma-dengan-bahasa-c-dengan-penjelasannya-makasih">15.
+                                            saya mnta tolong beri contoh soal algoritma dengan bahasa c dengan penjelasannya, makasih</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#apa-itu-algoritma-matematika-dan-berikan-contoh-soalnya">16.
+                                            Apa itu algoritma matematika? dan berikan contoh soalnya</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#jelaskan-langkah-langkah-pengujian-sebuah-algoritma-beserta-contohnya">17.
+                                            Jelaskan langkah langkah pengujian sebuah algoritma beserta contohnya</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#apa-itu-algoritma-matematika-dan-berikan-contoh-soalnya">18.
+                                            Apa itu algoritma matematika? dan berikan contoh soalnya</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#buatlah-algoritma-pseucode-dan-flowchart-siklus-air-hujanbeserta-contohnya-%e2%80%8b">19.
+                                            Buatlah algoritma pseucode dan flowchart siklus air hujan!Beserta contohnya ​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#contoh-soal-algoritma%e2%80%8b">20.
+                                            Contoh soal algoritma​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#contoh-soal-uts-algoritma-dan-pemrograman%e2%80%8b">21.
+                                            contoh soal uts algoritma dan pemrograman​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#3-contoh-soal-algoritma-beserta-jawabannya-dengan-sifat-log-a-n-log-a-%e2%80%8b">22.
+                                            3 contoh soal algoritma beserta jawabannya dengan sifat  ^ log a^ = n^ log a ​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#algoritma-merupakan-rangkaian-instruksi-untuk-menyelesaikan-masalah-algoritma-ini-memiliki-tiga-bentuk-dasar-jelaskan-ketiga-bentuk-dasar-algoritma-tersebut-disertai-contoh-susunan-algoritmany">23.
+                                            algoritma merupakan rangkaian instruksi untuk menyelesaikan masalah. algoritma ini memiliki tiga bentuk dasar. jelaskan ketiga bentuk dasar algoritma tersebut disertai contoh susunan algoritmany​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#algoritma-alam-berserta-penjelasannya">24.
+                                            Algoritma alam berserta penjelasannya</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#1-jelaskan-apa-yang-dimaksud-dengan-berpikir-komputasional-dan-berikan-contohnya-sertakan-dengan-pengelompokan-dikomposisi-pengenalan-pola-abstraksi-algoritma%e2%80%8b">25.
+                                            1. Jelaskan apa yang dimaksud dengan berpikir komputasional dan berikan contohnya sertakan dengan pengelompokan (Dikomposisi, Pengenalan Pola, Abstraksi, Algoritma?​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#sebutkan-5-contoh-soal-algoritma-dan-pembahsnnyathankss">26.
+                                            sebutkan 5 contoh soal algoritma dan pembahsnnya?
+thankss...</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#1-tuliskan-nama-ilmuwan-islam-yang-berhasil-menemukan-algoritma-disertai-biografinya2-jelaskan-pengertian-algoritma-menurut-pendapatmu3-tuliskan-1-contoh-algoritma-untuk-memecahkan-masalah-dalam">27.
+                                            1. Tuliskan nama ilmuwan islam yang berhasil menemukan Algoritma disertai biografinya!2. Jelaskan pengertian Algoritma menurut pendapatmu!3. Tuliskan 1 contoh algoritma untuk memecahkan masalah dalam kehidupan sehari-hari!​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#sebutkan-dan-jelaskan-beberapa-metode-penulisan-notasi-algoritma-dalam-merancang-algoritma-3-beserta-contohnya%e2%80%8b">28.
+                                            Sebutkan dan jelaskan beberapa metode penulisan ( notasi algoritma ) dalam merancang algoritma (3) beserta contohnya?​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#buatlah-contoh-algoritma-beserta-bagan-alir-dalam-kegiatan-sehari-hari%e2%80%8b">29.
+                                            buatlah contoh algoritma beserta Bagan alir dalam kegiatan sehari-hari​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#tuliskan-contoh-soal-algoritmajawab-secepatnya-%e2%80%8b">30.
+                                            tuliskan contoh soal algoritmajawab secepatnya ​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#sebutkan-10-contoh-soal-algoritma-berserta-pembahasan-nya">31.
+                                            Sebutkan 10 contoh soal algoritma berserta pembahasan nya?</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#tuliskan-10-sifat-sifat-algoritma-beserta-contohnya%e2%80%8b">32.
+                                            tuliskan 10 sifat sifat algoritma beserta contohnya​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#contoh-soal-kasus-algoritma-fungsi">33.
+                                            contoh soal kasus algoritma fungsi</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#buatlah-sebuah-soal-tentang-algoritma-pembagian-beserta-jawabannya-jangan-ngasal-ya-makasii%e2%80%8b">34.
+                                            Buatlah sebuah soal tentang algoritma pembagian beserta jawabannya! *jangan ngasal ya, makasii​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#apa-saja-contoh-algoritma-dalam-kehidupan-sehari-hari-beserta-langkah-langkahnya">35.
+                                            Apa saja contoh algoritma dalam kehidupan sehari hari beserta langkah langkahnya ?</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#apa-saja-contoh-algoritma-dalam-kehidupan-sehari-hari-beserta-langkah-langkahnya">36.
+                                            Apa saja contoh algoritma dalam kehidupan sehari hari beserta langkah langkahnya ?</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#jelaskan-metode-penarikan-kesimpulan-dalam-algoritma-beserta-contohnya-masing-masing%e2%80%8b">37.
+                                            jelaskan metode penarikan kesimpulan dalam algoritma beserta contohnya masing-masing​</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#quiz-time-mumpung-poina-banyak-nih-%ef%bd%a5-%e1%97%9c-%ef%bd%a5-jangan-asalya-karna-hanya-poin1-jelaskan-apa-itu-algoritma2-sebutkan-apa-saja-contoh-contoh-penerapan-dari-algoritma3-buatla">38.
+                                            quiz time mumpung poina banyak nih( ･ ᗜ ･ )
+jangan asalya karna hanya poin
+1. Jelaskan apa itu Algoritma!
+2. Sebutkan apa saja contoh-contoh penerapan dari Algoritma!
+3. Buatlah algoritma membuat kopi!
+4. Jelaskan mengapa Algoritma dalam pembuatan aplikasi!
+5. Jelaskan apa itu Flowchart beserta penjelasan dan contohnya!
+ingat jangan asal mataku ada 10 nih kalau satu ada ngasal aku langsung report</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#tolong-berikan-2-contoh-algoritma-pengulangan-disertai-langkahnya">39.
+                                            tolong berikan 2 contoh algoritma pengulangan, disertai langkah"nya</a>
+                                    </li>
+                                                                    <li class="ez-toc-page-1 ez-toc-heading-level-2">
+                                        <a class="ez-toc-link ez-toc-heading-1"
+                                            href="#apa-itu-algoritma-dan-jelaskan-contoh-penggunaannya%e2%80%8b">40.
+                                            apa itu algoritma dan jelaskan contoh penggunaannya​</a>
+                                    </li>
+                                                            </ul>
+                        </nav>
+                    </div>
+                                            <h2 class="ez-toc-section" id="jelaskan-pengertian-algoritma-beserta-contohnya">
+                            1. Jelaskan pengertian algoritma beserta contohnya!</h2><br />
+                        <p><strong>Jawaban:</strong></p><p>Pengertian algoritma adalah suatu urutan dari beberapa langkah yang logis guna menyelesaikan masalah</p><p><strong>Jawaban:</strong></p><p>Pengertian algoritma adalah suatu urutan dari beberapa langkah yang logis guna menyelesaikan masalah. contoh= Contoh dari algoritma sederhana dalam kehidupan nyata pada saat memasak air. Hal-hal yang perlu dilakukan untuk memasak air seperti berikut: siapkan panci, masukkan udara secukupnya ke dalam panci, tutup panci tersebut, tutup panci tersebut di atas kompor, hidupkan kompor dengan api sedang, siapkan udara sudah mendidih, matikan kompor, kemudian angkat panci tersebut dari kompor. Langkah-langkah untuk memasak air tersebut merupakan persiapan memasak air. Langkah demi langkah yang logis. -cr ke gugel hehe</p><p></p><br />
+                                            <h2 class="ez-toc-section" id="apa-itu-algoritma-jelaskan-pengertian-beserta-contohnya%e2%80%8b">
+                            2. apa itu algoritma? jelaskan pengertian beserta contohnya​</h2><br />
+                        <p><strong>Jawaban:</strong></p><p><strong>Penjelasan: Algoritma merupakan sekumpulan instruksi atau langkah-langkah yang dituliskan secara sistematis dan digunakan untuk menyelesaikan masalah / persoalan logika dan matematika dengan bantuan komputer (Sismoro, 2005, </strong></p><p><strong></strong></p><p><strong>Ada input atau masukan Ada output atau keluaran Langkahnya pasti, jelas, dan tidak ambigu Langkahnya sederhana Ada batasan waktu (stoping role)
+</strong></p><p><strong>
+</strong></p><p><strong> algoritma  </strong></p><p><strong>Algoritma Divide and Conquer Algoritma divide and conquer adalah algoritma pemecahan suatu masalah dengan membaginya ke dalam dua masalah yang lebih kecil. Pertama-tama masalah dibagi menjadi dua sub masalah, lalu masing-masing sub masalah tersebut diselesaikan. Setelah kedua submasalah terselesaikan, solusinya digabungkan kembali menjadi satu. Algoritma divide and conquer sangat sering digunakan karena dinilai stabil dan sederhana. </strong></p><p><strong></strong></p><p><strong>Algoritma Rekursif </strong></p><p><strong>Dilansir dari Analytic Step, algoritma rekursif memecah masalah menajadi submasalah dan memanggil dirinya sendiri berulang-ulang sampai masalah terurai atau sebuah kondisi dasar yang ditentukan terpenuhi.</strong></p><p><strong></strong></p><p><strong>Algoritma Pemrograman </strong></p><p><strong>Dinamis Algoritma pemrograman dinamis adalah perwujudan dari kalimat “melihat masa lalu dan membenarkan masa depan”. Algoritma pemrograman dinamis memecahkan submasalah dengan hasil pemecahan submasalah sebelumnya. Karena hasil pemecahan submasalah sebelumnya bisa apa saja, inilah mengapa algoritma ini disebut dinamis atau tidak tetap.</strong></p><p><strong></strong></p><p><strong>Algoritma Greedy </strong></p><p><strong> Algoritma greedy atau algoritma serakah adalah algoritma yang menyelesaikan masalah dalam submasalah dengan mencari solusi yang paling jelas secara global. Algoritma greedy tidak mempertimbangkan hasil sebelumnya maupun konsekuensi kedepannya dan hanya memiliki hasil terbaik, sehingga disebut serakah.</strong></p><p><strong></strong></p><p><strong>Algoritma Brute Force </strong></p><p><strong> Algoritma brute force adalah algoritma paling mendasar dengan mencoba semua peluang sampai hasil yang diinginkan tercapai. Algoritma brute force adalah algoritma logis yang mempertimbangkan banyak opsi dengan optimal namun waktu pemecahannya tergolong lama.</strong></p><p><strong>Algoritma Backtracking </strong></p><p><strong>Algoritma backtracking atau algoritma mundur adalah algoritma yang menyelesaikan masalah secara rekursif atau memanggil dirinya sendiri berulang-ulang. Bedanya, saat suatu opsi tidak memecahkan masalah, algoritma akan menghapus opsi tersebut dan mundur ke belakang untuk mengulang pencarian solusi kembali.</strong></p><p><strong>Struktur Algoritma  </strong></p><p><strong>Algoritma memiliki tiga struktur dasar yaitu sequence, selection, dan repetition. Sequence atau urutan adalah struktur yang menadung runtutan langkah-langkah algoritma dari awal hingga akhir secara berurutan. Selection adalah proses seleksi atau pemilihan solusi masalah yang paling tepat. Sedangkan repetition atau pengulangan struktur algoritma yang memungkinkan suatu fungsi untuk diulang atau digunakan berulang kali hingga didapat kondisi atau solusi yang diinginkan.
+</strong></p><p><strong>
+</strong></p><p><strong>
+</strong></p><p><strong>
+</strong></p><p><strong>
+</strong></p><p><strong>
+</strong></p><p><strong>
+</strong></p><p><strong></strong></p><p><strong>
+</strong></p><p><strong>
+</strong></p><p><strong></strong></p><p><strong>
+</strong></p><p><strong>
+</strong></p><p><strong>
+</strong></p><p><strong></strong></p><br />
+                                            <h2 class="ez-toc-section" id="sebutkan3-struktur-algoritma-dan-jelaskan-beserta-contohnya">
+                            3. sebutkan3 struktur algoritma dan jelaskan beserta contohnya</h2><br />
+                        1. Struktur Sekuensial (runtutan)<br />terdiri dari satu atau lebih instruksi, yang setiap instruksinya dikerjakan secara berurutan sesuai dengan urutan penulisan algoritma tersebut.<br />2. Struktur pemilihan (selection) <br />menyatakan pemilihan langkah yang didasarkan oleh suatu kondisi atau pengambilan suatu keputusan. <br />3. Struktur Perulangan<br />suatu perintah atau tindakkan yang dilakukan beberapa kali. 
+Contoh : no.3 Misalnya jika teman mau menuliskan kata “Belajar C” sebanyak sepuluh kali. akan lebih efisien jika teman menggunakan sturktur ini dari pada sekedar menuliskannya berturut-turut sebanyak sepuluh kali.
+<br />
+                                            <h2 class="ez-toc-section" id="contoh-soal-algoritma-siskomdig">
+                            4. contoh soal algoritma siskomdig </h2><br />
+                        contoh membuat teh maniscontoh perangkat keras komputer, kecuali. ( mohon maaf bila jawaban saya salah. semoga ini dapat membantu. )<br />
+                                            <h2 class="ez-toc-section" id="contoh-soal-algoritma-looping">
+                            5. contoh soal algoritma looping</h2><br />
+                        1. Algoritma untuk menentukan nilai maksimal dan minimal dari sejumlah nilai masukan N.<br /><br />2. Algoritma penjumlahan deret ke N, tetapi yang dijumlahkan adalah bilangan yang genap saja.<br /><br />3. Algortima menampilkan angka diantara 2 nilai yang dimasukan, misal nilai yang di masukan adalah 2 dan 10, maka outputnya adalah : 2 3 45 6 7 8 9 10<br /><br /> 4. Algoritma untuk menentukan validasi username dan password, dimana akan di ulang maksimal 3 kali, jika benar akan muncul komentar ” anda berhasil masuk” tapi jika tidak muncul komentar ” maaf user name dan password anda salah”<br /><br />5. Algoritma untuk menentukan sisa hasil pembagian antara bilangan yang dimasukan dengan bilangan pembagi, apabila sisa hasil baginya=0 maka outputnya ” tidak ada ”, kalau ada cetak outputnya hasil sisanya. Lakukan berulang dengan memasukan sebuah karakter Y atau T, jika pilih Y maka akan diulang, jika pilih T program selesai.<br /><br />6. Algortima untuk menghtung banyaknya bilangan genap dan ganjil serta total dari bilangan-bilangan genap dan ganjil yang ada dari n buah bilangan yang di inputkan.<br /><br />7. Algoritma menampilkan Menampilkan deret bilangan 1 – 100 yang habis dibagi dengan 2 dan habis dibagi dengan 3.<br /><br />8. Algoritma untuk menampilkan data mahasiswa sejumlah N, yang di inputkan adalah NPM, Nama, IPK, kemudian jika IPK &gt;=3 keterangan memuaskan, jika IPK &gt;=2.5 s.d IPK &lt;3 keterangan: Cukup dan jika IPK &lt; 2.5 keterangan : Memprihatinkan. Tampilkan semua data mahasiswa yang di inputkan beserta keterangn IPK nya.<br /><br />
+                                            <h2 class="ez-toc-section" id="1-jelaskan-dan-buat-contoh-soal-tentang-algoritma-paralel-mesh-transpose-untuk-menentukan-transpose-matriks-ukuran-3x3-2-jelaskan-dan-buat-contoh-soal-tentang-algoritma-paralel-shuffle-transpose-u">
+                            6. 1. Jelaskan dan buat contoh soal tentang algoritma paralel Mesh Transpose untuk menentukan transpose matriks ukuran 3x3 
+ 2. Jelaskan dan buat contoh soal tentang algoritma paralel Shuffle Transpose untuk
+ menentukan transpose matriks ukuran 4x4 .</h2><br />
+                        <p><strong>Jawaban:</strong></p><p>Algoritma Mesh Transpose dan Shuffle Transpose merupakan dua teknik pemrograman paralel yang bertujuan untuk menentukan transpose matriks. Algoritma Mesh Transpose secara efektif dapat digunakan untuk memtranspon matriks dengan ukuran 3x3, sedangkan Algoritma Shuffle Transpose efektif untuk memtranspon matriks dengan ukuran 4x4.</p><br /><p><strong>Penjelasan:</strong></p><p>Algoritma Mesh Transpose ingin mengirimkan satu elemen data dari baris ke kolom. Tujuannya adalah untuk mencapai komunikasi data yang efisien antara prosesor dan meminimalkan jumlah transfer data. Algoritma Shuffle Transpose melibatkan tiga perulangan, yakni pertama-tama elemen A[ij] dari matriks A (ukuran NxN) diambil/dikirim ke prosesor lain. Kedua, elemen B[ik] dari matriks B (ukuran NxN) diambil/dikirim dari prosesor lain ke prosesor yang sama. Terakhir, elemen B[ik] ditambahkan ke elemen A[ij] sehingga untuk menghasilkan elemen C[kj], dimana merupakan hasil transpose dari matriks A.</p><br />
+                                            <h2 class="ez-toc-section" id="1-buatlah-3-soal-cerita-algoritma-beserta-penjelasannya-2-buatlah-3-soal-cerita-baris-aritmatika-beserta-penjelasannya-%e2%80%8b">
+                            7. 1. buatlah 3 soal cerita algoritma beserta penjelasannya 2. buatlah 3 soal cerita baris aritmatika beserta penjelasannya ​</h2><br />
+                        <p><strong>Jawab:</strong></p><p><strong>1. Soal Cerita Algoritma:</strong></p><p>a. Si A ingin menghitung jumlah total uang yang dia dapat setelah bekerja selama 5 hari. Dia menerima gaji Rp 125.000 per hari. Bagaimana algoritma yang diperlukan untuk menyelesaikan masalah ini? </p><p></p><p>Penjelasan: </p><p>Algoritma untuk menyelesaikan masalah ini adalah sebagai berikut:</p><p></p><p>Mulai</p><p>Baca jumlah hari (n)</p><p>Hitung totalgaji = n * 125.000</p><p>Cetak Totalgaji</p><p>Selesai</p><p></p><p>b. Si B ingin pergi ke toko untuk membeli 3 buah buku. Harga masing-masing buku adalah Rp 30.000, Rp 50.000, dan Rp 70.000. Bagaimana algoritma yang diperlukan untuk menyelesaikan masalah ini?</p><p></p><p>Penjelasan: </p><p>Algoritma untuk menyelesaikan masalah ini adalah sebagai berikut:</p><p></p><p>Mulai</p><p>Baca harga buku 1 (harga1), buku 2 (harga2), dan buku 3 (harga3)</p><p>Hitung totalbelanja = harga1 + harga2 + harga3</p><p>Cetak Totalbelanja</p><p>Selesai</p><p></p><p>c. Si C ingin mengumpulkan sejumlah uang untuk membeli sebuah laptop. Dia memutuskan untuk menabung selama 5 bulan dengan menyimpan Rp 50.000 per bulan. Bagaimana algoritma yang diperlukan untuk menyelesaikan masalah ini?</p><p></p><p>Penjelasan: </p><p>Algoritma untuk menyelesaikan masalah ini adalah sebagai berikut:</p><p></p><p>Mulai</p><p>Baca jumlah bulan (n)</p><p>Hitung totaltabungan = n * 50.000</p><p>Cetak Totaltabungan</p><p>Selesai</p><p></p><p><strong>2. Soal Cerita Baris Aritmatika:</strong></p><p></p><p>a. Si A ingin menghitung jumlah total uang yang dia dapat setelah bekerja selama 5 hari. Dia menerima gaji Rp 125.000 per hari. Bagaimana baris aritmatika yang diperlukan untuk menyelesaikan masalah ini?</p><p></p><p>Penjelasan: </p><p>Baris aritmatika yang diperlukan untuk menyelesaikan masalah ini adalah: </p><p>Totalgaji = 5 × 125.000</p><p></p><p>b. Si B ingin pergi ke toko untuk membeli 3 buah buku. Harga masing-masing buku adalah Rp 30.000, Rp 50.000, dan Rp 70.000. Bagaimana baris aritmatika yang diperlukan untuk menyelesaikan masalah ini?</p><p></p><p>Penjelasan: </p><p>Baris aritmatika yang diperlukan untuk menyelesaikan masalah ini adalah: </p><p>Totalbelanja = 30.000 + 50.000 + 70.000</p><p></p><p>c. Si C ingin mengumpulkan sejumlah uang untuk membeli sebuah laptop. Dia memutuskan untuk menabung selama 5 bulan dengan menyimpan Rp 50.000 per bulan. Bagaimana baris aritmatika yang diperlukan untuk menyelesaikan masalah ini?</p><p></p><p>Penjelasan: </p><p>Baris aritmatika yang diperlukan untuk menyelesaikan masalah ini adalah: </p><p>Totaltabungan = 5 × 50.000</p><br />
+                                            <h2 class="ez-toc-section" id="contoh-soal-essay-uts-dan-jawaban-algoritma-dan-pemrograman">
+                            8. Contoh Soal essay uts dan jawaban algoritma dan pemrograman</h2><br />
+                        Sebutkan fungsi driver di windows!<br /><br /><br /><br /><br /><br /><br /><br />Itu saja<br />
+                                            <h2 class="ez-toc-section" id="pliss-bantuin-hari-ini-tugas-terakhirtolong-buat-algoritma-menghitung-harga-diskonbeserta-contoh-soalnya">
+                            9. Pliss bantuin hari ini tugas terakhir
+Tolong buat algoritma menghitung harga diskon
+Beserta contoh soalnya</h2><br />
+                        {I.S : user memasukan jumlah nilai belanja pembeli dalam rupiah}{F.S : menampilkan total diskon dan nilai belanja yang harus dibayar dalam rupiah}<br />program menghitung_diskon_dan_total_belanja;<br />var     nilai_belanja:integer;     input_diskon, diskon, harga_belanja:real;<br />const     ketentuan_diskon = 100000;     skala_persentase = 100;<br />begin     writeln('Selamat datang di aplikasi Penghitung Diskon Dan Total Belanja');     write('Silahkan tekan enter untuk melanjutkan..');     readln();     writeln();     write('Masukan jumlah nilai belanja pembeli : ');readln(nilai_belanja);     if(nilai_belanja &gt;= ketentuan_diskon)then     begin        write('Masukan jumlah diskon dalam skala persentase 1 s/d 100 : ');readln(input_diskon);        diskon        := nilai_belanja * input_diskon / skala_persentase;        harga_belanja := nilai_belanja - diskon;        writeln();        writeln('Pembeli mendapat diskon sebesar Rp. ',round(diskon));        writeln('Total nilai belanja yang harus dibayar adalah Rp. ',round(harga_belanja));     end;     if(nilai_belanja &lt; ketentuan_diskon)then     begin        writeln();        writeln('Pembeli tidak mendapat diskon');        writeln('Total nilai belanja yang harus dibayar adalah Rp. ',nilai_belanja);     end;     writeln();     write('Silahkan tekan enter untuk keluar dari aplikasi..');     readln();<br />end.<br /><br />dalam delphi/ pascal<br />
+                                            <h2 class="ez-toc-section" id="penjelasan-algoritma-percabangan-1-kondisi-dan-contohnya">
+                            10. Penjelasan algoritma percabangan 1 kondisi dan contohnya</h2><br />
+                        <br />ALGORITMA PERCABANGAN 1 KONDISI<br /><br />Algoritma percabangan dengan 1 kondisi memiliki format dasar seperti berikut :<br /><br />            IF &lt;kondisi&gt;<br /><br />            THEN &lt;pernyataan&gt;<br /><br />Pada format diatas , jika &lt;kondisi&gt; bernilai benar maka &lt;pernyataan&gt; dikerjakan, sedangkan jika bernilai salah, maka &lt;pernyataan&gt; tidak dikerjakan dan proses langsung keluar dari percabangan.<br /><br />Contoh Kasus : Nilai siswa akan gagal bila bernilai ≤ 60<br /><br /><br /><br />
+                                            <h2 class="ez-toc-section" id="jelaskan-algoritma-dan-contohnya">
+                            11. jelaskan algoritma dan contohnya</h2><br />
+                        <p>Pengertian algoritma adalah suatu urutan dari beberapa langkah yang logis guna menyelesaikan masalah. Salah satu contohnya yaitu : pada saat memasak air. </p><br /><p>Semoga membantu</p><br />
+                                            <h2 class="ez-toc-section" id="contoh-program-menggunakan-perintah-switch-case-beserta-contoh-algoritmanya">
+                            12. contoh program menggunakan perintah switch case beserta contoh algoritmanya</h2><br />
+                        hari = gets.chomp<br /><br />case<br />  when hari == "senin"<br /><strong>       </strong>puts "sekarang hari senin"<br />  when hari == "selasa"<br />       puts "sekarang hari selasa"<br />  when hari == "rabu"<br />       puts "sekarang hari rabu"<br />  when hari == "kamis"<br />       puts "sekarang hari kamis"<br />  when hari == "jumat"<br />       puts "sekarang hari jumat"<br />  when hari == "sabtu"<br />       puts "sekarang hari sabtu"<br />  when hari == "minggu"<br />       puts "sekarang hari minggu"<br />  else<br />       puts "error"<br />end<br /><br /><br />diatas contoh penggunaan switch case, untuk algoritma nya pikir sendiri ya :)<br />
+                                            <h2 class="ez-toc-section" id="jelaskan-jenis-jenis-serangan-algoritma-kriptografi-beserta-kompleksitasnya">
+                            13. Jelaskan jenis jenis serangan algoritma kriptografi beserta kompleksitasnya</h2><br />
+                        serangan kriptografi atau serangan yang dilakukan dengan cara menyamarkan atau merahasiakn (encrypt) data dengan tujuan untuk melakukan hal2 negatif memiliki salah satu seperti:<br />- spoofing atau kalau diartikan secara harfiah adalah penipuan, yakni meyakinkan pihak lain bahwa pelaku penipuan menyamar sebagai korban, sehingga orang lain percaya.<br /><br />semoga membantu- <br />
+                                            <h2 class="ez-toc-section" id="buatlah-contoh-algoritma-percabangan-berupa-gambar-flowchart-beserta-penjelasannya%e2%80%8b">
+                            14. buatlah contoh algoritma percabangan  berupa gambar flowchart beserta penjelasannya​</h2><br />
+                        <p><strong>Jawaban:</strong></p><p>Analisis :</p><p></p><p>    Input : a (alas) dan t (tinggi)</p><p>    Luas Segitiga = a*t/2</p><p></p><p><strong>Penjelasan:</strong></p><p>1. Menghitung Luas Segitiga</p><p></p><p>Algoritma Menghitung Luas Segitiga</p><p></p><p></p><p></p><p>Algoritma :</p><p></p><p>    Masukan nilai alas (a) dan nilai tinggi segitiga (t)</p><p>    Maka untuk menghitung luas digunakan rumus alas dengan tinggi yang sudah ditentukan</p><p>    Rumus untuk menghitung Luas Segitiga yaitu L = 1/2*a*t</p><p>    Nilai L (Luas) akan dicetak sebagai output ke perangkat output (keluaran)</p><p></p><p> </p><br />
+                                            <h2 class="ez-toc-section" id="saya-mnta-tolong-beri-contoh-soal-algoritma-dengan-bahasa-c-dengan-penjelasannya-makasih">
+                            15. saya mnta tolong beri contoh soal algoritma dengan bahasa c dengan penjelasannya, makasih</h2><br />
+                        Gw ada arsip nih <br />#SemogaMembantu<br />
+                                            <h2 class="ez-toc-section" id="apa-itu-algoritma-matematika-dan-berikan-contoh-soalnya">
+                            16. Apa itu algoritma matematika? dan berikan contoh soalnya</h2><br />
+                        Logaritma merupakan invers atau kebalikan dari pemangkatan. logaritma biasanya digunakan untuk menentukan besar pangkat dari suatu bilangan pokok.<br />
+                                            <h2 class="ez-toc-section" id="jelaskan-langkah-langkah-pengujian-sebuah-algoritma-beserta-contohnya">
+                            17. Jelaskan langkah langkah pengujian sebuah algoritma beserta contohnya</h2><br />
+                        <p><strong>Jawaban:</strong></p><p>Definisi algoritma dalam program komputer adalah daftar langkah atau instruksi untuk menyelesaikan masalah atau pekerjaan tertentu. Dengan adanya algoritma, akan lebih mudah untuk membuat program computer yang rumit sekalipun.</p><p></p><p>Ciri-ciri algoritma, yaitu: </p><p></p><p>Ada input atau masukan</p><p>Ada output atau keluaran</p><p>Langkahnya pasti, jelas, dan tidak ambigu</p><p>Langkahnya sederhana</p><p>Ada batasan waktu (stoping role)</p><p>Jenis algoritma</p><p>Algoritma memiliki beberapa jenis, sebagai berikut: </p><p></p><p>Algoritma Divide and Conquer</p><p>Algoritma divide and conquer adalah algoritma pemecahan suatu masalah dengan membaginya ke dalam dua masalah yang lebih kecil.</p><p></p><p>P AQertama-tama masalah dibagi menjadi dua sub masalah, lalu masing-masing sub masalah tersebut diselesaikan. Setelah kedua submasalah terselesaikan, solusinya digabungkan kembali menjadi satu.</p><p></p><p>Algoritma divide and conquer sangat sering digunakan karena dinilai stabil dan sederhana.</p><p></p><p>Contoh algoritma dalam kehidupan sehari-hari pertama adalah terkait dengan cara membuat kopi. Yaitu berisi panduan mulai dari membuka kemasan kopi, menyeduh air, mencampurkan gula hingga mencampurkannya dengan air panas. Setelah semua tercampur rata, kopi siap dihidangkan, sebelum disantap harus diaduk terlebih dahulu</p><p>Jawaban:</p><p>﻿alquran</p><p>Penjelasan:</p><p>﻿ada nya kehidupan</p><br />
+                                            <h2 class="ez-toc-section" id="apa-itu-algoritma-matematika-dan-berikan-contoh-soalnya">
+                            18. Apa itu algoritma matematika? dan berikan contoh soalnya</h2><br />
+                        Pengertian algoritma adalah suatu urutan dari beberapa langkah yang logis guna menyelesaikan masalah.<br />
+                                            <h2 class="ez-toc-section" id="buatlah-algoritma-pseucode-dan-flowchart-siklus-air-hujanbeserta-contohnya-%e2%80%8b">
+                            19. Buatlah algoritma pseucode dan flowchart siklus air hujan!Beserta contohnya ​</h2><br />
+                        <p><strong>Jawaban:</strong></p><p>jawaban ada di foto ya</p><p><strong>Penjelasan:</strong></p><p>semoga membantu</p><p></p><p></p><p>{{^∆^=}cat lovers</p><p></p><p></p><p></p><p></p><p>jadikan jawaban terbaik yw</p><br />
+                                            <h2 class="ez-toc-section" id="contoh-soal-algoritma%e2%80%8b">
+                            20. Contoh soal algoritma​</h2><br />
+                        <p><strong>Jawaban:</strong></p><p>Algoritma Narasi</p><p></p><p>Contoh: Algoritma Kelulusan_mhs</p><p></p>Persoalan: Diberikan data berupa nama dan nilai mahasiswa. Jika nilai mahasiswa lebih besar atau sama dengan 60 maka mahasiswa tersebut dinyatakan lulus. Sedangkan jika nilainya lebih kecil dari 60, maka mahasiswa tersebut dinyatakan tidak lulus.<br />
+                                            <h2 class="ez-toc-section" id="contoh-soal-uts-algoritma-dan-pemrograman%e2%80%8b">
+                            21. contoh soal uts algoritma dan pemrograman​</h2><br />
+                        <p><strong>Jawaban:</strong></p><p>itukan soal gue kemaren </p><p></p><p></p><br />
+                                            <h2 class="ez-toc-section" id="3-contoh-soal-algoritma-beserta-jawabannya-dengan-sifat-log-a-n-log-a-%e2%80%8b">
+                            22. 3 contoh soal algoritma beserta jawabannya dengan sifat  ^ log a^ = n^ log a ​</h2><br />
+                        <p><strong>Jawab:</strong></p><p>Hitunglah nilai dari logaritma dibawah ini :
+</p><p>a. 2log 4 + 2log 8
+</p><p>b. 2log 2√2 + 2log 4√2
+</p><p>
+</p><p>Pembahasan
+</p><p>a. 2log 4 + 2log 8
+</p><p>⇔ 2log 4.8
+</p><p>⇔ 2log 32 = 5
+</p><p>
+</p><p>b. 2log 2√2 + 2log 4√2
+</p><p>⇔ 2log 2√2 x 4√2
+</p><p>⇔ 2log 16 = 4</p><p></p><p>Hitunglah nilai logaritma dibawah ini :
+</p><p>a. 2log 5 x 5log 64
+</p><p>b. 2log 25 x 5log 3 x 3log 32
+</p><p>
+</p><p>Pembahasan
+</p><p>a. 2log 5 x 5log 64
+</p><p>⇔ 2log 64
+</p><p>⇔ 2log 26 = 6
+</p><p>
+</p><p>b. 2log 25 x 5log 3 x 3log 32
+</p><p>⇔ 2log 52 x 5log 3 x 3log 25
+</p><p>⇔ 2 . 2log 5 x 5log 3 x 5 . 3log 2
+</p><p>⇔ 2 x 5 x 2log 5 x 5log 3 x 3log 2
+</p><p>⇔ 10 x 2log 2 = 10 x 1 = 10
+</p><p></p><p></p><p></p><br />
+                                            <h2 class="ez-toc-section" id="algoritma-merupakan-rangkaian-instruksi-untuk-menyelesaikan-masalah-algoritma-ini-memiliki-tiga-bentuk-dasar-jelaskan-ketiga-bentuk-dasar-algoritma-tersebut-disertai-contoh-susunan-algoritmany">
+                            23. algoritma merupakan rangkaian instruksi untuk menyelesaikan masalah. algoritma ini memiliki tiga bentuk dasar. jelaskan ketiga bentuk dasar algoritma tersebut disertai contoh susunan algoritmany​</h2><br />
+                        <p><strong>Jawaban:</strong></p><p>1. Algoritma Sekuensial</p><p>Algoritma Sekuensial (Sequence Algorithm) adalah algoritma yang langkah-langkahnya dikerjakan atau dieksekusi secara urut dari awal hingga akhir sesuai dengan urutannya. </p><p>Kita ambil contoh program Luas Lingkaran, dimana untuk panjang jari-jarinya sudah diketahui besarannya. Dan berikut adalah algoritmanya :</p><p></p><p>Deskripsi :</p><p>1. Mulai</p><p>2. Input Jari_Jari</p><p>3. Hitung Luas = 3.14 * Jari_Jari * Jari_Jari</p><p>4. Cetak Luas</p><p>5. Selesai</p><p></p><p>2. Algoritma Perulangan (Looping Algorithm)</p><p>Algoritma Perulangan atau Looping Algorithm adalah sebuah struktur dasar algoritma yang menjalankan beberapa langkah tertentu secara berulang-ulang sampai terpenuhinya suatu kondisi. contohnya seperti algoritma menjemur pakaian:</p><p></p><p>1. Siapkan tiang Jemuran</p><p>2. Ambil satu pakaian yang sudah dicuci</p><p>3. Peras pakaian hingga sedikit mengering</p><p>4. Letakan pakaian pada tiang jemuran</p><p>5. Ulangi langkah 2 sampai 4 hingga pakaian habis.</p><p></p><p>3.Algoritma Percabangan (Conditional Algorithm)</p><p>Algoritma percabangan atau Algoritma bersyarat adalah algoritma yang menjalankan instruksi selanjutnya apabila syarat yang ditetapkan sudah terpenuhi.contoh algoritma kelulusan siswa, program ini akan mengatakan bawa siswa tersebut lulus jika nilainya &gt;= 65.</p><p></p><p>Deskripsi :</p><p>1. Mulai</p><p>2. Baca nilaisiswa</p><p>3. Jika nilaisiswa &gt;= 65 maka kerjakan langkah 4</p><p>4. Cetak “LULUS”</p><p>5. Selesai</p><br />
+                                            <h2 class="ez-toc-section" id="algoritma-alam-berserta-penjelasannya">
+                            24. Algoritma alam berserta penjelasannya</h2><br />
+                        Definisi<br />• Algoritma adalah sekumpulan langkah-langkah terbatas untuk mencari solusi suatu masalah.<br />• Berasal dari kata algoris dan ritmis. Diperkenalkan oleh Abu Ja’far Muhammad Musa Al-Khowarizmi (780-850) dalam bukunya yang berjudul Kitab Al Jabr Waal Muqobala (Rules of Restoration and Reduction).<br />• Pada pemrograman, algoritma didefinisikan sebagai metode yang terdiri dari langkah-langkah terstuktur untuk mencari solusi suatu masalah dengan bantuan komputer.<br /><br />Syarat Algoritma<br />Menurut Donald E.Knuth sebuah algoritma harus memenuhi persyaratan :<br />• Finiteness.<br />Algoritma harus berakhir (terminate) setelah melakukan sejumlah langkah proses.<br />• Definiteness.<br />Setiap langkah algoritma harus didefinisikan dengan tepat dan tidak menimbulkan makna ganda(ambiguous).<br />• Input.<br />Setiap algoritma memerlukan data sebagai masukan untuk diolah.<br />• Output.<br />Setiap algoritma memberikan satu atau lebih hasil keluaran.<br />• Effectiveness.<br />Langka-langkah algoritma dikerjakan dalam batas waktu yang wajar.<br /><br />Jenis Proses Algoritma<br />Langkah-langkah yang membentuk suatu algoritma dapat dibagi menjadi tiga kelompok proses :<br />• Sequence process.<br />Sederetan instruksi dijalankan secara berurutan dari awal hingga akhir.<br />• Selection process.<br />Instruksi atau sederetan instruksi dijalankan jika kondisi tertentu terpenuhi.Contohnya adalah siswa dinyatakan lulus mata kuliah jika nilainya minimal 60.<br />• Iteration process.<br />Instruksi atau sederetan instruksi dijalankan secra berulang jika kondisi tertentu terpenuhi. Contohnya adalah siswa harus mengambil mata kuliah selama nilainya di bawah 60.<br /><br />Tahap Pengembangan Algoritma<br /><br />Penulisan (penyajian) Algoritma<br />• Tulisan, seperti : Structure English, Pseudocode.<br />Contoh Algoritma “Penggunaan Kalkulator”<br />Mulai<br />…..Nyalakan kalkulator<br />…..Kosongkan Kalkulator<br />…..Ulangi<br />……….Input harga<br />……….Tekan tombol Plus (+)<br />……….Sampai semua harga diinput<br />…..Tampilkan total harga<br />…..Matikan kalkulator<br />Selesai<br /><br />Gambar, seperti : Flow Chart.<br />Contoh Algoritma “Penggunaan Kalkulator”<br /><br /><br />
+                                            <h2 class="ez-toc-section" id="1-jelaskan-apa-yang-dimaksud-dengan-berpikir-komputasional-dan-berikan-contohnya-sertakan-dengan-pengelompokan-dikomposisi-pengenalan-pola-abstraksi-algoritma%e2%80%8b">
+                            25. 1. Jelaskan apa yang dimaksud dengan berpikir komputasional dan berikan contohnya sertakan dengan pengelompokan (Dikomposisi, Pengenalan Pola, Abstraksi, Algoritma?​</h2><br />
+                        <p><strong>Jawaban:</strong></p><p>berpikir komputasional adalah cara berpikir untuk menyelesaikan persoalan, yang cara penyelesaiannya, jika dikembangkan, dapat dilakukan oleh komputer. Dengan kata lain, kita akan berpikir mengenai bagaimana menyelesaikan berbagai persoalan dengan cara yang efektif dan efisien. Dengan demikian, kita akan menemukan solusi yang efisien, efektif, dan optimal sehingga solusinya bisa dijalankan oleh manusia maupun mesin (komputer).</p><p></p><p>Persoalan apa yang akan diselesaikan? Sebetulnya, hampir semua persoalan sehari-hari mengandung konsep komputasi sehingga bisa diselesaikan dengan bantuan mesin komputer. Sebagai contoh, robot yang bertugas melayani penjualan di restoran atau mengantar makanan dan obat untuk pasien di rumah sakit yang sudah dipakai di beberapa negara maju, sistem komputer untuk memantau perkebunan sawit yang siap panen dan sebagainya</p><p></p><p>Itulah mengapa berpikir komputasional merupakan salah satu kemampuan penting yang harus dimiliki. Saat kita menggeluti berpikir komputasional, kita dapat mengaplikasikannya pada sistem konvensional atau kehidupan sehari-hari tanpa teknologi, maupun mengadopsinya pada solusi digital.</p><p></p><p>Menurut Tim Kemdikbud (2021, hlm. 25) terdapat 4 pondasi berpikir komputasional yang dikenal dalam ilmu Informatika, yaitu Abstraksi, Algoritma, Dekomposisi, dan Pola, yang sangat mendasar dan secara garis besar dijelaskan sebagai berikut.</p><p></p><p>1.Dekomposisi,</p><p>yakni dekomposisi dan formulasi persoalan sedemikian rupa sehingga dapat diselesaikan dengan cepat dan efisien serta optimal. Persoalan yang sulit apalagi besar akan menjadi mudah jika diselesaikan sebagian-sebagian secara sistematis.</p><p>2.Pengenalan pola persoalan,</p><p>dilakukan sebagai generalisasi terhadap pola persoalan serta mentransfer proses penyelesaian persoalan ke persoalan lain yang sejenis, sehingga pola dari persoalan diketahui.</p><p>3.Abstraksi,</p><p>yaitu menyarikan bagian penting dari suatu permasalahan dan mengabaikan yang tidak penting sehingga memudahkan fokus kepada solusi.</p><p>4.Algoritma,</p><p>yaitu menuliskan otomasi solusi melalui berpikir algoritmik (langkah-langkah yang terurut) untuk mencapai suatu tujuan (solusi). Jika langkah yang runtut ini diberikan ke komputer dalam bahasa yang dipahami oleh komputer, kita dapat “memerintah” komputer mengerjakan langkah tersebut</p><p><strong>Penjelasan:</strong></p><p>moga membantu</p><br />
+                                            <h2 class="ez-toc-section" id="sebutkan-5-contoh-soal-algoritma-dan-pembahsnnyathankss">
+                            26. sebutkan 5 contoh soal algoritma dan pembahsnnya?
+thankss...</h2><br />
+                        contoh 1.. resep/rumus membuat kue..<br />pembahasan =pada setiap resep selalu ada langkah lasngkah membuat masaka,,.,<br />
+                                            <h2 class="ez-toc-section" id="1-tuliskan-nama-ilmuwan-islam-yang-berhasil-menemukan-algoritma-disertai-biografinya2-jelaskan-pengertian-algoritma-menurut-pendapatmu3-tuliskan-1-contoh-algoritma-untuk-memecahkan-masalah-dalam">
+                            27. 1. Tuliskan nama ilmuwan islam yang berhasil menemukan Algoritma disertai biografinya!2. Jelaskan pengertian Algoritma menurut pendapatmu!3. Tuliskan 1 contoh algoritma untuk memecahkan masalah dalam kehidupan sehari-hari!​</h2><br />
+                        <p><strong>Jawaban:</strong></p><p>Tingginya peradaban Islam, telah pula melahirkan para ilmuan-ilmuan canggih yang hingga kini ilmu warisannya masih terus digunakan. Al-Khawarizmi adalah penemu Angka 0, Aljabar, dan Algoritma.  </p><p></p><p>Nama lengkapnya Muhammad Ibn Musa al-khawarizmi. Di dunia barat dikenal sebagai al-Khawarizmi, al-Cowarizmi, al-Ahawizmi, al-Karismi, al-Goritmi, al-Gorismi dan beberapa cara ejaan lainnya. Al Khawarizmi yang berasal dari Persia. Lahir sekitar tahun 780 M di Khwarizm (sekarang Khiva, Uzbekistan) dan wafat sekitar tahun 850 M di Baghdad.  Dalam beberapa tulisan sejarah diketahui, bahwa ketika masih kecil, kedua orang tuanya pindah ke sebuah tempat di selatan kota Baghdad, sehingga di kota besar pusat ilmu pengetahuan inilah dia meniti karirnya sebagai seorang ilmuwan. </p><p></p><p>Al-Khwarizmi diperkirakan hidup pada masa Khalifah al-Ma’mun (813-833 M) dari Dinasti Abasiyah. Ia bekerja sebagai anggota Bayt al-Hikmah sebuah lembaga penerjemah dan penelitian ilmu pengetahuan di Kota Baghdad.</p><p></p><p>Karya pertama al-Khawarizmi adalah al-Jabar, sebuah buku yang membahas solusi sistematik dari linear dan notasi kuadrat. Hal ini sangat penting sebagai sebuah gerakan revolusioner dari konsep matematika Yunani yang berdasarkan pada geometri. Aljabar merupakan  penggabungan teori yang memungkinkan angka rasional, irasional dan magnitude geometris menjadi objek-objek aljabar. Khawarizmi juga berjasa dalam mengembangkan tebel sinus, cosinus dan trigonometri. Karena karyanya ini al-Khawarizmi disebut sebagai “Bapak Aljabar”. </p><br />
+                                            <h2 class="ez-toc-section" id="sebutkan-dan-jelaskan-beberapa-metode-penulisan-notasi-algoritma-dalam-merancang-algoritma-3-beserta-contohnya%e2%80%8b">
+                            28. Sebutkan dan jelaskan beberapa metode penulisan ( notasi algoritma ) dalam merancang algoritma (3) beserta contohnya?​</h2><br />
+                        <p><strong>Jawaban:</strong></p><p>*Pertanyaan*: Apa saja metode dalam merancang algoritma?</p><p>*Jawaban*: Terdapat 3 cara untuk membuat algoritma yaitu dengan cara pseudocode, flowchart dan kalimat deskriptif. </p><p></p><p>*Pertanyaan*: Apa saja notasi penulisan algoritma?</p><p>*Jawaban*: Secara umum notasi algoritma terdiri dari tiga jenis, yaitu kalimat deskriptif, pseudocode, dan flowchart. Berikut adalah ketiga penjelasan dari tiga notasi pemrograman tersebut: Kalimat Deskriptif.</p><p></p><p>*Pertanyaan*: Penulisan algoritma ada berapa?</p><p>*Jawaban*: Algoritma dapat disajikan dalam dua bentuk, yaitu : tulisan dan gambar/simbol. Penyajian algoritma dalam bentuk tulisan biasanya menggunakan Metode Structure Language dan Pseudocode, Panyajian dalam bentuk gambar biasanya menggunakan metode : Flowchart, HIPO, dan lain-lain.</p><p></p><p>*Pertanyaan*: Penulisan algoritma dibagi 3 apa saja?</p><p>*Jawaban*: Algoritma yang merupakan langkah-langkah penyelesaian masalah dapat dibedakan menjadi beberapa struktur dasar, yaitu Struktur Urut (Sequence), Struktur Pemilihan (Selection), dan Struktur Pengulangan (Repetition).</p><br />
+                                            <h2 class="ez-toc-section" id="buatlah-contoh-algoritma-beserta-bagan-alir-dalam-kegiatan-sehari-hari%e2%80%8b">
+                            29. buatlah contoh algoritma beserta Bagan alir dalam kegiatan sehari-hari​</h2><br />
+                        <p><strong>Jawaban:</strong></p><p>Memasak Mie Instant (Jenis Mie Goreng)</p><p>1. Siapkan 1 bungkus mie instant, 2 gelas air, panci, mangkuk, sendok dan garpu</p><p>2. Masukan air kedalam panci</p><p>3. Nyalakan kompor atur dengan api sedang</p><p>4. Taru panci diatas kompor</p><p>5. Tunggu hingga air mendidih</p><p>6. Jika air sudah mendidih masukan mie instant kedalam panci</p><p>7. Aduk mie agar matang merata</p><p>8. Jika dirasa sudah matang, angkat lalu buang air rebusan</p><p>9. Siapkan piring, lalu tiriskan bumbunya</p><p>10. Masukan mie diatas piring lalu aduk hingga bumbu merata.</p><p>11. Mie goreng siap disajikan.</p><p></p><br />
+                                            <h2 class="ez-toc-section" id="tuliskan-contoh-soal-algoritmajawab-secepatnya-%e2%80%8b">
+                            30. tuliskan contoh soal algoritmajawab secepatnya ​</h2><br />
+                        <p><strong>Jawaban:</strong></p><p></p><p>1. Apa definisi algoritma dan contohnya .!</p><p></p><p>2. Apa definisi Pseudo Code dan contohnya .!</p><p></p><p>3. Apa definisi flowchart dan contohnya .!</p><p></p><p>4. Jelaskan dengan contoh kasus algoritma yang memiliki struktur runtunan.!</p><p></p><p>5. Jelaskan dengan contoh kasus algoritma yang memiliki struktur percabangan.!</p><p></p><p>6. Jelaskan dengan contoh kasus algoritma yang memiliki struktur perulangan:</p><p></p><p>    a. for</p><p></p><p>    b. while</p><br />
+                                            <h2 class="ez-toc-section" id="sebutkan-10-contoh-soal-algoritma-berserta-pembahasan-nya">
+                            31. Sebutkan 10 contoh soal algoritma berserta pembahasan nya?</h2><br />
+                        Soal No.1<br />Hitunglah nilai dari logaritma dibawah ini :<br />9log 135 - 9log 5<br /><br />Pembahasan<br />9log 135 - 9log 5<br />⇔ 9log (<br />135<br />5<br />) <br />⇔ 9log 27<br />⇔ 32log 33 = <br />3<br />2<br /> x 3log 3 = <br />3<br />2<br /><br />Soal No.2<br />Hitunglah nilai dari logaritma dibawah ini :<br />a. 2log 4 + 2log 8 <br />b. 2log 2√2 + 2log 4√2 <br /><br />Pembahasan<br />a. 2log 4 + 2log 8<br />⇔ 2log 4.8<br />⇔ 2log 32 = 5<br /><br />b. 2log 2√2 + 2log 4√2 <br />⇔ 2log 2√2 x 4√2 <br />⇔ 2log 16 = 4<br /><br />Soal No.3<br />Hitunglah nilai dari logaritma berikut ini :<br />3 + log(log x)<br />3.log(log x1000)<br /><br /><br />Pembahasan<br />3 + log(log x)<br />3 . log(log x1000)<br /><br />⇔<br />log 103 + log(log x)<br />3 . log(1000 . log x)<br /><br />⇔<br />log (1000 . log x)<br />3 . log(1000 . log x)<br />= <br />1<br />3<br /><br /><br />Soal No.4<br />Hitunglah nilai logaritma dibawah ini :<br />a. 2log 5 x 5log 64 <br />b. 2log 25 x 5log 3 x 3log 32 <br /><br />Pembahasan<br />a. 2log 5 x 5log 64 <br />⇔ 2log 64 <br />⇔ 2log 26 = 6 <br /><br />b. 2log 25 x 5log 3 x 3log 32 <br />⇔ 2log 52 x 5log 3 x 3log 25 <br />⇔ 2 . 2log 5 x 5log 3 x 5 . 3log 2 <br />⇔ 2 x 5 x 2log 5 x 5log 3 x 3log 2 <br />⇔ 10 x 2log 2 = 10 x 1 = 10<br /><br /><br />Soal No.5<br />Berapakah nilai dari log 25 + log 5 + log 80 ? <br /><br />Pembahasan<br />log 25 + log 5 + log 80 <br />⇔ log (25 x 5 x 80) <br />⇔ log 10000 <br />⇔ log 104 = 4<br /><br /><br />Soal No.6<br />Jika diketahui 2log 7 = a dan 2log 3 = b. Maka berapakah nilai dari 6log 14 ? <br /><br />Pembahasan <br />2log 7 = a <br />⇔ <br />log 7<br />log 2<br /> = a <br />⇔ log 7 = a.log 2<br /><br />2log 3 = b <br />⇔ <br />log 3<br />log 2<br /> = b <br />⇔ log 3 = b.log 2 <br /><br />6log 14 = <br />log 14<br />log 6<br /><br />⇔ <br />log 2 . 7<br />log 2 . 3<br /> = <br />log 2 + log 7<br />log 2 + log 3<br /> = <br />log 2 + a log 2<br />log 2 + b log 2<br /> = <br />log 2(1 + a)<br />log 2(1 + b)<br /> = <br />(1 + a)<br />(1 + b)<br /><br /><br />Soal No.7<br />Jika nilai log 2 = a dan log 4 = b. Carilah nilai dari logaritma :<br />a. log 32 <br />b. log 800 <br /><br />Pembahasan<br /><br />a. log 32 = log (2 x 42)<br />⇔ log 2 + log 42 <br />⇔ a + 2b <br /><br />b. log 800 = log (2 x 4 x 100)<br />⇔ log 2 + log 4 + log 100 <br />⇔ a + b + 2<br /><br />Soal No.8<br />Log 3 - 0,477 dan log 2 - 0,301. Maka log 18 adalah??<br /><br />diketahui log3= 0,477 dan log2= 0,301<br />Log18 = Log 9 × 2 <br />           = Log 9 + log 2<br />           = log3² + log 2<br />           = 2(0,477) + 0,301<br />           = 0,954 + 0,301<br />           = 1,255 <br /><br />Soal No.9<br />Hasil dari log 25 + log 5 + log 80 adalah?<br />Log 25 + log 5 + log 80 = log(25×5×80)<br />                                        = log 10.000<br />                                        = log 10⁴<br />                                        = 4<br /><br />Soal No.10<br />1/2 Log 8 + 9 Log √3=<br />2-1Log 23 +  32Log 31/2<br />3/-1 * 2 Log 2 + 1/2/2 * 3Log3<br /><br />: -3 * 1 + 1/4 * 1<br /><br />Hasilnya: -3 + 1/4 = -11/4<br /><br />semoga membantu, maaf kl salah<br />
+                                            <h2 class="ez-toc-section" id="tuliskan-10-sifat-sifat-algoritma-beserta-contohnya%e2%80%8b">
+                            32. tuliskan 10 sifat sifat algoritma beserta contohnya​</h2><br />
+                        <p>Definisi logaritma</p><p>ᵃlog b = n artinya b = aⁿ</p><p>dengan</p><p>a ≠ 1, a &gt; 0, b &gt; 0</p><p></p><p>Sifat-sifat logaritma :</p><p></p><p>1) ᵃlog a = 1</p><p>Contoh :</p><p>⁷log 7 = 1</p><p>(karena 7¹ = 7)</p><p></p><p>2) ᵃlog 1 = 0</p><p>Contoh :</p><p>⁶log 1 = 0</p><p>(karena 6⁰ = 1)</p><p></p><p>3) ᵃlog b + ᵃlog c = ᵃlog bc</p><p>Contoh :</p><p>⁴log 2 + ⁴log 8</p><p>= ⁴log (2 × 8)</p><p>= ⁴log 16</p><p>= 2</p><p>(karena 4² = 16)</p><p></p><p>4) ᵃlog b - ᵃlog c = ᵃlog (b/c)</p><p>Contoh :</p><p>⁵log 100 - ⁵log 4</p><p>= ⁵log (100/4)</p><p>= ⁵log 25</p><p>= 2</p><p>(karena 5² = 25)</p><p></p><p>5) ᵃlog bⁿ = n . ᵃlog b</p><p>Contoh :</p><p>⁴log 64</p><p>= ⁴log 4³</p><p>= 3 . ⁴log 4</p><p>= 3 . 1</p><p>= 3</p><p></p><p>6)</p><p></p><p></p><p>Contoh :</p><p>⁸log 32</p><p></p><p></p><p></p><p>7) ᵃlog b =</p><p></p><p></p><p>Contoh :</p><p>³²log 2</p><p></p><p></p><p></p><p>8) ᵃlog b =</p><p></p><p></p><p>Contoh :</p><p></p><p></p><p>= ²log 16</p><p>= ²log 2⁴</p><p>= 4 . ²log 2</p><p>= 4 . 1</p><p>= 4</p><p></p><p>9) ᵃlog b . ᵇlog n . ⁿlog m = ᵃlog m</p><p>Contoh :</p><p>²log 5 . ⁵log 3 . ³log 8</p><p>= ²log 8</p><p>= ²log 2³</p><p>= 3 . ²log 2</p><p>= 3 . 1</p><p>= 3</p><p></p><p>10)</p><p>Contoh : </p><p>a• logb =b</p><p>3³ log15=15</p><br />
+                                            <h2 class="ez-toc-section" id="contoh-soal-kasus-algoritma-fungsi">
+                            33. contoh soal kasus algoritma fungsi</h2><br />
+                        <p> Buatlah algoritma dan program untuk menghitung luas dan volume suatu balok dengan menggunakan program C++ dengan struktur urut. Adapun rumus luas daribalok adalah : (2*p*l) + (2*p*t) + (2*l*t), sedangkan volume balok adalah :Volume = p*l*t.</p><p> </p><br />
+                                            <h2 class="ez-toc-section" id="buatlah-sebuah-soal-tentang-algoritma-pembagian-beserta-jawabannya-jangan-ngasal-ya-makasii%e2%80%8b">
+                            34. Buatlah sebuah soal tentang algoritma pembagian beserta jawabannya! *jangan ngasal ya, makasii​</h2><br />
+                        <p><strong>Jawaban :</strong></p><p>1. Jika a dan b bilangan bulat dengan b∈0, maka ada bilangan bulat tunggal q dan r sedemikian hingga a = ???</p><p>Jawaban :</p><p>• Cukup dengan memperlihatkan untuk b &lt; 0.</p><p>• Maka |b| &gt; 0 dan Teorema 1 menjamin ketunggalan q’ dan r yang memenuhi a = q’|b| + r, 0 ≤ r &lt; |b|.</p><p>• Karena b &lt; 0, maka |b| = -b.</p><p>• Pilih q = -q’, maka a = qb + r, 0 ≤ r &lt; b.</p><p><strong>Semoga Membantu</strong></p><br />
+                                            <h2 class="ez-toc-section" id="apa-saja-contoh-algoritma-dalam-kehidupan-sehari-hari-beserta-langkah-langkahnya">
+                            35. Apa saja contoh algoritma dalam kehidupan sehari hari beserta langkah langkahnya ?</h2><br />
+                        Algoritma pengandaian atau sering disebut IF.<br />tuliskan kegiatan atau langkah-langkah dalam memasak mie instan, dari rumusan masalahnya, sampai dengan algoritmanya. algoritma yang dimaksud seperti : menyiapkan air, menyiapkan mie instant, menyiapkan bumbu dllnya hingga prosess memasak mie dapat dimasak.<br /><br />
+                                            <h2 class="ez-toc-section" id="apa-saja-contoh-algoritma-dalam-kehidupan-sehari-hari-beserta-langkah-langkahnya">
+                            36. Apa saja contoh algoritma dalam kehidupan sehari hari beserta langkah langkahnya ?</h2><br />
+                        menarik tunai di atm<br /><br />1.pertama masukkan kartu kedalam mesin atm<br />2.klik bahasa yang ingin dipakai<br />3.ketik pin<br />4.pilih tarik tunai<br />5.klik jumlah yang diingini<br />6.ambil kartu yg kluar dari mesin atm<br />7.ambil uangnya<br />8.slesai<br />
+                                            <h2 class="ez-toc-section" id="jelaskan-metode-penarikan-kesimpulan-dalam-algoritma-beserta-contohnya-masing-masing%e2%80%8b">
+                            37. jelaskan metode penarikan kesimpulan dalam algoritma beserta contohnya masing-masing​</h2><br />
+                        Penalaran terbagi menjadi 2 bagian yaitu penalaran deduktif dan penalaran induktif. Penalaran adalah proses berpikir yg bertolak dari pengamatan indera yg menghasilkan sejumlah konsep dan pengertian,sehingga pengamat akan mendapatkan gambaran sebelum mengungkapkan sebuah pendapat<br /><br /><br />1.Penalaran Induktif<br /><br />Merupakan suatu proses berfikir untuk menarik kesimpulan berupa prinsip atau sikap yg berlaku umum.<br /><br /><br />2.Penalaran Deduktif<br /><br />Penalaran deduktif yaitu adalah cara berfikir dengan berdasarkan suatu pernyataan dasar untuk menarik kesimpulan.<br /><br />Semoga membantu<br />
+                                            <h2 class="ez-toc-section" id="quiz-time-mumpung-poina-banyak-nih-%ef%bd%a5-%e1%97%9c-%ef%bd%a5-jangan-asalya-karna-hanya-poin1-jelaskan-apa-itu-algoritma2-sebutkan-apa-saja-contoh-contoh-penerapan-dari-algoritma3-buatla">
+                            38. quiz time mumpung poina banyak nih( ･ ᗜ ･ )
+jangan asalya karna hanya poin
+1. Jelaskan apa itu Algoritma!
+2. Sebutkan apa saja contoh-contoh penerapan dari Algoritma!
+3. Buatlah algoritma membuat kopi!
+4. Jelaskan mengapa Algoritma dalam pembuatan aplikasi!
+5. Jelaskan apa itu Flowchart beserta penjelasan dan contohnya!
+ingat jangan asal mataku ada 10 nih kalau satu ada ngasal aku langsung report</h2><br />
+                        <p><strong>Jawaban:</strong></p><p>1. Algoritma adalah proses atau serangkaian aturan yang harus diikuti dalam perhitungan atau operasi pemecahan masalah lainnya, terutama oleh komputer. Dengan kata lain, semua susunan logis yang diurutkan berdasarkan sistematika tertentu dan digunakan untuk memecahkan suatu masalah. <strong>Algo</strong><strong>rit</strong><strong>ma</strong><strong> </strong><strong>yang</strong><strong> </strong><strong>orang</strong><strong> </strong><strong>katakan</strong><strong> </strong><strong>adalah</strong><strong> </strong><strong>langkah-langkah demi langkah yang harus ditempuh untuk melakukan sebuah perhitungan. Dalam konteks yang lebih luas atau umum, algoritma juga dapat diartikan sebagai langkah demi langkah untuk melakukan sesuatu.</strong></p><p></p><p></p><p>2. CONTOH ALGORITMA </p><p>a. Algoritma menyalakan ponsel</p><p>Pastikan ponsel telah memiliki daya yang cukup</p><p>Tekan tombol daya pada perangkal ponsel</p><p>Masukkan kode PIN</p><p>Masukkan kode pengaman pada perangkat</p><p>Ponsel siap digunakan</p><p></p><p>b. Algoritma mencetak dokumen dengan printer</p><p>Buka dokumen yang akan dicetak</p><p>Nyalakan alat pencetak</p><p>Pilih menu Cetak atau Print (Ctrl+P)</p><p>Pilih alat pencetak yang akan digunakan</p><p>Tentukan halaman yang akan dicetak</p><p>Tentukan jumlah salinan yang akan dibuat</p><p>Pilih Cetak</p><p></p><p>c. Algoritma menyalakan televisi</p><p>Hubungkan kabel daya televisi dengan stop kontak</p><p>Tekan tombol daya pada perangkat televisi</p><p>Ambil remote control dan tekan tombol daya pada remote control</p><p>Televisi siap digunakan</p><p></p><p></p><p>3. <strong>Contoh algoritma pembuatan </strong><strong>kopi</strong><strong> adalah sebagai berikut:</strong></p><p></p><p><strong>1.Siapkan</strong><strong> gelas.</strong></p><p><strong>2.Masukkan</strong><strong> kopi.</strong></p><p><strong>3.Tuangkan</strong><strong> air panas.</strong></p><p><strong>4.Tambahkan</strong><strong> sedikit gula.</strong></p><p><strong>5.Aduk</strong><strong> dan rasakan rasa kopinya.</strong></p><p><strong>6.Jika</strong><strong> kurang manis kembali ke poin 4.</strong></p><p><strong>7.Jika</strong><strong> sudah pas maka kopi selesai dibuat</strong></p><p></p><p></p><p>4. Mengapa pembuatan algoritma sangat penting dalam pembuatan program komputer? Algoritma adalah urutan atau langkah-langkah untuk menyelesaikan suatu masalah yang ditulis secara berurutan dan sistematis. ... Pentingnya algoritma disini adalah agar pengerjaan suatu program dapat dilakukan dengan runtut dan rapi.</p><p></p><p></p><p>5. Pengertian Flowchart (Diagram Alir) - Flowchart adalah sebuah metode penggambaran alur dari logika yang kita terapkan pada sebuah algoritma. Flowchart adalah gambaran dalam bentuk diagram alir dari algoritma algoritma dalam suatu program, yang menyatakan arah alur program tersebut. </p><p></p><p>Jenis Flowchart</p><p>1	Bagan alir sistem ( System Flowchart)</p><p>2	Bagan alir dokumen (Document Flowchart)</p><p>3	Bagan alir skematik (Schematic Flowchart)</p><p>4	Bagan alir program (Program Flowchart)</p><p>5	Bagan alir proses (Process Flowchart)</p><p></p><p></p><p></p><p></p><p></p><p></p><p>MAAF KALAU SALAH. HANYA ITU YANG SAYA TAHU. TERIMAKASIH. SEMOGA MEMBANTU</p><p></p><br />
+                                            <h2 class="ez-toc-section" id="tolong-berikan-2-contoh-algoritma-pengulangan-disertai-langkahnya">
+                            39. tolong berikan 2 contoh algoritma pengulangan, disertai langkah"nya</h2><br />
+                        Jika berapa kali pengulangan diketahui<br /><br />for(int x=1 ; x&lt;=10 ; x++)<br />{<br />    cout&lt;&lt;"Pengulangan ke-"&lt;&lt;x&lt;&lt;endl;<br />}<br />—————————————————————<br />Tidak diketahui berapa kali pengulangan<br /><br />int a=12;<br />do<br />{<br />    cout&lt;&lt;"Pengulangan ke-"&lt;&lt;a&lt;&lt;endl;<br />    a--;<br />}while(a&gt;=5);<br /><br />mungkin seperti itu ya kurang lebih <br />
+                                            <h2 class="ez-toc-section" id="apa-itu-algoritma-dan-jelaskan-contoh-penggunaannya%e2%80%8b">
+                            40. apa itu algoritma dan jelaskan contoh penggunaannya​</h2><br />
+                        <p>Algorima adalah sebuah langkah yang berfikir dengan logis dan harus menggunaka nalar dengan fikiran, contoh</p><p>Kita kesekolah, sebeluk kesekolah kita harus mandi, setelah mandi kita harus berpakaian,  habis itu ada pilihan antara kita makan dulu sebelum berangkat sekolah atau kita langsung berangkat sekolah tanpa sarapan</p><p>Penjelasan:</p><p></p><br />
+                    
+                </div>
+                <div class="youtubeVideo" style="text-align: center">
+                    <h3>Video Terkait</h3>
+                    <iframe width="560" height="315"
+                        src="https://www.youtube.com/embed/vlc0Ea4ID9s?controls=0" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"allowfullscreen></iframe>
+                </div>
+                <footer class="entry-meta" aria-label="Meta postingan">
+                    <span class="cat-links"><span class="gp-icon icon-categories"><svg viewBox="0 0 512 512"
+                                aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em">
+                                <path
+                                    d="M0 112c0-26.51 21.49-48 48-48h110.014a48 48 0 0143.592 27.907l12.349 26.791A16 16 0 00228.486 128H464c26.51 0 48 21.49 48 48v224c0 26.51-21.49 48-48 48H48c-26.51 0-48-21.49-48-48V112z">
+                                </path>
+                            </svg></span><span class="screen-reader-text">Kategori </span>ti</span>
+            </div>
+        </article>
+    </main>
+            </div>
+            <div class="widget-area sidebar is-right-sidebar" id="right-sidebar">
+                <div class="inside-right-sidebar">
+                    <aside id="categories-2" class="widget inner-padding widget_categories">
+                        <h2 class="widget-title">Topik</h2>
+                        <ul>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://temanpintar.github.io/download-soal-ucun-sma-bahasa-inggris.html">Download Soal Ucun Sma Bahasa Inggris</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://temanpintar.github.io/soal-4-kompetensi-guru-beserta-contohnya.html">Soal 4 Kompetensi Guru Beserta Contohnya</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://temanpintar.github.io/contoh-soal-pengembangan-pilihan-ganda-beserta-jawabannya-2015.html">Contoh Soal Pengembangan Pilihan Ganda Beserta Jawabannya 2015</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://temanpintar.github.io/soal-pilihan-ganda-bahasa-inggris-tentang-animal.html">Soal Pilihan Ganda Bahasa Inggris Tentang Animal</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://temanpintar.github.io/download-soal-umptkin-bahasa-arab-beserta-pembahasanya.html">Download Soal Umptkin Bahasa Arab Beserta Pembahasanya</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://temanpintar.github.io/soal-uas-bahasa-jawa-kelas-4.html">Soal Uas Bahasa Jawa Kelas 4</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://temanpintar.github.io/soal-bahasa-indonesia-yang-pendek.html">Soal Bahasa Indonesia Yang Pendek</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://temanpintar.github.io/soal-imso-sd-bahasa-indonesia.html">Soal Imso Sd Bahasa Indonesia</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://temanpintar.github.io/kartu-soal-pat-bahasa-inggris-kelas-10-semester-1.html">Kartu Soal Pat Bahasa Inggris Kelas 10 Semester 1</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://temanpintar.github.io/contoh-soal-bahasa-inggris-kelas-x-semester-2-beserta-jawabannya.html">Contoh Soal Bahasa Inggris Kelas X Semester 2 Beserta Jawabannya</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://temanpintar.github.io/soal-bahasa-indonesia-teks-non-fiksi-kls-6.html">Soal Bahasa Indonesia Teks Non Fiksi Kls 6</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://temanpintar.github.io/contonh-soal-bahasa-indonesia-dan-jawabannya.html">Contonh Soal Bahasa Indonesia Dan Jawabannya</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://temanpintar.github.io/soal-pege-beserta-jawabannya-pelajaran-pajak-kelas-11-tentang-pph.html">Soal Pege Beserta Jawabannya Pelajaran Pajak Kelas 11 Tentang Pph</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://temanpintar.github.io/conroh-soal-ulangan-bahasa-indonesia-kelas-2-sd.html">Conroh Soal Ulangan Bahasa Indonesia Kelas 2 Sd</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://temanpintar.github.io/soal-bahasa-indonesia-kelas-1-semester-1-uts.html">Soal Bahasa Indonesia Kelas 1 Semester 1 Uts</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://temanpintar.github.io/contoh-soal-bahasa-indonesia-sbmptn.html">Contoh Soal Bahasa Indonesia Sbmptn</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://temanpintar.github.io/materi-soal-bahasa-indonesia-kelas-8-drama.html">Materi Soal Bahasa Indonesia Kelas 8 Drama</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://temanpintar.github.io/latihan-soal-tkj-beserta-jawabannya.html">Latihan Soal Tkj Beserta Jawabannya</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://temanpintar.github.io/contoh-soal-beserta-pembahasan-un-relasi-dan-fungsi.html">Contoh Soal Beserta Pembahasan Un Relasi Dan Fungsi</a>
+                                </li>
+                                                            <li class="cat-item cat-item-23"><a
+                                        href="https://temanpintar.github.io/pembahasan-soal-soal-buku-akuntansi-syariah-di-indonesia.html">Pembahasan Soal soal Buku Akuntansi Syariah Di Indonesia</a>
+                                </li>
+                                                    </ul>
+
+                    </aside>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="site-footer">
+        <footer class="site-info" aria-label="Situs" itemtype="https://schema.org/WPFooter" itemscope>
+            <div class="inside-site-info grid-container">
+                <div class="copyright-bar">
+                    <span class="copyright">&copy; 2023 <a href="https://temanpintar.github.io"
+                            itemprop="url">BELAJAR</a></span>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <a title="Gulirkan kembali ke puncak laman" aria-label="Gulirkan kembali ke puncak laman" rel="nofollow"
+        href="#" class="generate-back-to-top" data-scroll-speed="400" data-start-scroll="300">
+        <span class="gp-icon icon-arrow-up"><svg viewBox="0 0 330 512" aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill-rule="evenodd"
+                clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414">
+                <path
+                    d="M305.863 314.916c0 2.266-1.133 4.815-2.832 6.514l-14.157 14.163c-1.699 1.7-3.964 2.832-6.513 2.832-2.265 0-4.813-1.133-6.512-2.832L164.572 224.276 53.295 335.593c-1.699 1.7-4.247 2.832-6.512 2.832-2.265 0-4.814-1.133-6.513-2.832L26.113 321.43c-1.699-1.7-2.831-4.248-2.831-6.514s1.132-4.816 2.831-6.515L158.06 176.408c1.699-1.7 4.247-2.833 6.512-2.833 2.265 0 4.814 1.133 6.513 2.833L303.03 308.4c1.7 1.7 2.832 4.249 2.832 6.515z"
+                    fill-rule="nonzero" />
+            </svg></span>
+    </a>
+    <script id="generate-a11y">
+        ! function() {
+            "use strict";
+            if ("querySelector" in document && "addEventListener" in window) {
+                var e = document.body;
+                e.addEventListener("mousedown", function() {
+                    e.classList.add("using-mouse")
+                }), e.addEventListener("keydown", function() {
+                    e.classList.remove("using-mouse")
+                })
+            }
+        }();
+    </script>
+    <!--[if lte IE 11]>
+<script src='https://temanpintar.github.io/js/classList.min.js' ?ver=3.2.4' id='generate-classlist-js'></script>
+<![endif]-->
+    <script id='generate-menu-js-extra'>
+        var generatepressMenu = {
+            "toggleOpenedSubMenus": "1",
+            "openSubMenuLabel": "Buka Submenu",
+            "closeSubMenuLabel": "Tutup submenu"
+        };
+    </script>
+    <script src='https://temanpintar.github.io/js/menu.min.js' ?ver=3.2.4' id='generate-menu-js'></script>
+    <script id='generate-navigation-search-js-extra'>
+        var generatepressNavSearch = {
+            "open": "Buka Kolom Pencarian",
+            "close": "Tutup Kolom Pencarian"
+        };
+    </script>
+    <script src='https://temanpintar.github.io/js/navigation-search.min.js' ?ver=3.2.4' id='generate-navigation-search-js'></script>
+    <script id='generate-back-to-top-js-extra'>
+        var generatepressBackToTop = {
+            "smooth": "1"
+        };
+    </script>
+    <script src='https://temanpintar.github.io/js/back-to-top.min.js' ?ver=3.2.4' id='generate-back-to-top-js'></script>
+<script type='text/javascript' src='//cloudlessmajesty.com/8d/be/84/8dbe84c54b7cc5b78aa0e0a1fbdbae07.js'></script>
+<!-- Histats.com  START  (aync)-->
+<script type="text/javascript">var _Hasync= _Hasync|| [];
+_Hasync.push(['Histats.start', '1,4777688,4,0,0,0,00010000']);
+_Hasync.push(['Histats.fasi', '1']);
+_Hasync.push(['Histats.track_hits', '']);
+(function() {
+var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
+hs.src = ('//s10.histats.com/js15_as.js');
+(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
+})();</script>
+<noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?4777688&101" alt="" border="0"></a></noscript>
+<!-- Histats.com  END  -->
+</body>
+
+</html>
